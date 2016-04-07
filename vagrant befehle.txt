@@ -1,0 +1,14 @@
+
+
+
+// SSH into the box
+vagrant ssh
+
+// Connect to MySQL as the homestead user (password is: secret)
+mysql -uhomestead -p
+
+// Create a new database in MySQL
+CREATE DATABASE your_app_name;
+
+// Leave MySQL
+exit;
