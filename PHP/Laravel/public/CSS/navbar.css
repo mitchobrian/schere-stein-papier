@@ -1,0 +1,18 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  min-height:inherit;
+}
+
+.navbar-brand {
+  margin-top : -40px;
+
+}
+
+.jumbotron {
+  margin-top : 10px;
+}

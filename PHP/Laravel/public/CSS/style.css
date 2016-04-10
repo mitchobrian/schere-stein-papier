@@ -1,0 +1,57 @@
+
+
+.suchbalken {
+  background-color:yellow;	
+  padding:10px;
+  border-radius: 20px;
+  border-color: grey;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.tn {
+	border-radius:20px;
+}
+
+.kontaktbalken {
+  margin-top:10px;
+  position:relative;
+  height:120px;
+  background-color: #ff7500;
+  padding:10px;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 1px;
+  border-style: none;
+  
+  visibility:hidden;
+}
+
+.kontaktlogo {
+  margin-left:10px;
+  height:100px;
+  width:100px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  float:left;
+  
+  text-align:center
+}
+
+.kontaktinfos {
+	height:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	float:left;
+	margin-left:10px;
+	
+}
+
+.kontaktbutton {
+	margin-left:25px;
+	font-family:Arial, Helvetica, sans-serif;
+	float:left;
+	
+}
+
+
