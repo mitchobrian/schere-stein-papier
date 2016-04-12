@@ -17,7 +17,8 @@
             <div class="auswahl"><span>Stein</span></div>
             <div class="auswahl"><span>Papier</span></div>
         </div>
-        
-        <button>Auswählen</button>
+      
+	</div>
+        <button class="btn btn-primary form-control">Auswählen</button>
 
 @stop
