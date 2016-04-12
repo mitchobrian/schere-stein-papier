@@ -1,0 +1,58 @@
+#player-outer-div {
+    
+    height: 300px;
+	width:100%;
+	//overflow:hidden;
+}
+
+#player1-div {
+    font-size:50px;
+    position:relative;
+    left: 5%;
+    width:200px;
+}
+
+#player2-div {
+    font-size:50px;
+    position:relative;
+    right: -85%;
+    top: -24%;
+	width:200px;
+}
+
+#auswahl-div {
+    display:table;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    vertical-align: middle;
+    
+    
+    
+    
+}
+
+.auswahl {
+    font-size: 40px;
+    float:left;
+    margin: 25px;
+    width: 200px;
+    height: 200px;
+
+    border-style: solid;
+    border-width: thin;
+    
+}
+
+span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 200px;
+}
+
+button {
+    position: relative;
+    right:-47%;
+    height:50px;
+    width:100px;
+}
