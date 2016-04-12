@@ -1,5 +1,7 @@
 {{ Html::style('css/contact2.css') }}
-<h1>Contact </h1>
+@extends('master')
+@section('title', 'Kontakt') 
+<h1>Kontaktformular </h1>
 
 <ul>
     @foreach($errors->all() as $error)

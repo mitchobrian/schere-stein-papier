@@ -1,8 +1,11 @@
 #textarea {
 	resize:none;
-	
 }
 
-.outer {
-	
+h1 {
+	text-align: center; 
+}
+
+div {
+	margin:12px;
 }
