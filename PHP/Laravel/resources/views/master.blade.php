@@ -14,6 +14,19 @@
     
     @yield('content')
 
+	    <div class="container" style="margin-top:-30px;">
+
+        
+    <hr>
+      <footer>
+        <p>&copy; 2016 Beuthbros</p>
+		{{ Html::link('contact','Kontakt')}}
+        <!--<button type="button" class="btn btn-link" style="margin-left:-13px;">Kontakt</button>  -->
+		{{ Html::link('impressum','Impressum')}}
+        <!--<button type="button" class="btn btn-link">Impressum</button> --> 
+      </footer>
+    
+    </div> 
 </body>
 
 </html>
