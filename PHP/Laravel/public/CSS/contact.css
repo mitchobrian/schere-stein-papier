@@ -81,6 +81,7 @@ border-radius: 10px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
    border-radius: 8px;  
+  resize:none;
 }
 
 #contactus input[type="text"]:focus,textarea:focus

@@ -14,6 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 	});
+	
+Route::get('impressum', function() {
+	return view('impressum');
+});
+
+Route::get('gamepage', function() {
+	return view('gamepage');
+});
+
 Route::get('contact', 
   ['as' => 'contact', 'uses' => 'AboutController@create']);
 Route::post('contact', 
