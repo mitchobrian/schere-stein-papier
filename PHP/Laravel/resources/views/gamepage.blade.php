@@ -5,7 +5,7 @@
 
 @section('content')
 
-
+	 <div class="jumbotron">
         <div id="player-outer-div">
             <div id="player1-div">Player 1</div>
             <div id="player2-div">Player 2</div>
@@ -18,7 +18,8 @@
             <div class="auswahl"><span>Papier</span></div>
         </div>
       
+		<div class="container" style="text-align:center;" >
+			<button class="btn btn-primary btn-lg">Auswählen</button>
+		</div>
 	</div>
-        <button class="btn btn-primary form-control">Auswählen</button>
-
 @stop
