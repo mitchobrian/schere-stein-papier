@@ -7,7 +7,7 @@ body {
 .jumbotron{
     margin-bottom: 15px;
     background-color: darkgrey;
-    <!-- background-image: url(../images/background.jpg); -->
+    background-image: url(../images/background.jpg);
     background-position: 0% -20%;
     background-size:auto;
     background-repeat: no-repeat;
