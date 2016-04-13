@@ -23,6 +23,10 @@ Route::get('gamepage', function() {
 	return view('gamepage');
 });
 
+Route::get('gameend', function() {
+	return view('gameend');
+});
+
 Route::get('contact', 
   ['as' => 'contact', 'uses' => 'AboutController@create']);
 Route::post('contact', 

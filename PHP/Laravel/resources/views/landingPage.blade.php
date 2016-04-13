@@ -1,7 +1,12 @@
 @extends('master') 
 
-@section('title', 'Gamepage') 
+@section('title', 'LandingPage') 
+<<<<<<< HEAD
 {{ Html::style('../../public/CSS/jumbotron.css') }}
+=======
+{{ Html::style('css/bootstrap.min.css') }}
+{{ Html::style('css/jumbotron.css') }}
+>>>>>>> origin/master
 
 @section('content')
     
