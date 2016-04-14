@@ -1,13 +1,10 @@
-@extends('master') 
+﻿@extends('master') 
 
 @section('title', 'Gameend') 
-<<<<<<< HEAD
 {{ Html::style('../../public/CSS/jumbotron.css') }}
 {{ Html::style('css/gameend.css') }}           
-=======
 {{ Html::style('css/bootstrap.min.css') }}
 {{ Html::style('css/jumbotron.css') }}
->>>>>>> origin/master
 
 @section('content')
     
