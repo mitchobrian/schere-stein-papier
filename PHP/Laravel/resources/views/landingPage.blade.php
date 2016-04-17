@@ -33,12 +33,11 @@
  <!-- BUTTONS--> 
      <div class="container" style="text-align:center;" >
         <div>
-            <h4>Ab ins Spiel!</h4>
-            <button type="button" class="btn btn-primary btn-lg" style="background:Green;">Join</button>      
+            <a class="btn btn-primary btn-lg" href="#" role="button">Ab ins Spiel!!</a>
         </div> 
         <div>
-            <h4><i>Oder erstelle hier ein Spiel! </i> </h4>
-            <button type="button" class="btn btn-primary btn-lg" style="background:Red;">Create</button> 
+            <h4><i>Oder</i> </h4>
+            <a class="btn btn-primary btn-lg" href="{{ URL::route('hostwait') }}" role="button">...erstelle hier ein Spiel!</a>
         </div>  
       </div>
     </div>
