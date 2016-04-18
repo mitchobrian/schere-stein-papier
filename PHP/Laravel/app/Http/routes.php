@@ -27,13 +27,12 @@ Route::get('gameend', function() {
 	return view('gameend');
 });
 
+Route::get('hostwait', function() {
+	return view('hostwait');
+});
+
 
 Route::get('contact', 
   ['as' => 'contact', 'uses' => 'AboutController@create']);
 Route::post('contact', 
   ['as' => 'contact_store', 'uses' => 'AboutController@store']);
-Route::get('hostwait',[
-	'as' => 'hostwait',
-	'uses' => 'HostWaitController@update'
-]);
-
