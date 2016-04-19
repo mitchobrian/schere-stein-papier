@@ -4,16 +4,23 @@
 
 
 @section('content')
+    {{ Html::style('css/hostwait.css') }}
 
-    <div class="col-lg-12">
-        <h1>---USERNAME---...</h1> <h4>...bitte warte, bis dein Partner das Spiel betritt.</h4><br><br>
-        Das Spiel ist in <strong><span id="time">15:00</span></strong> Minuten beendet.<br><br>
+    <div class="col-lg-12 main">
+        <h1>---USERNAME---...</h1> <h4>...bitte warte, bis dein Partner das Spiel betritt.</h4>
 
+        <p id="usrimg"><img src="images/usr.png"> </p>
+
+        <p class="alert alert-info">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            <span class="sr-only">Info:</span>
+            Das Spiel wird in <strong><span id="time">15:00</span></strong> Minuten beendet, falls der Partner nicht
+            einsteigt. Bitte schicke ihm den GameCode, damit er dem Spiel beitreten kann.</p>
 
         <div class="input-group">
-            <input type="text" class="form-control txtGameCode" placeholder="Gamecode" value="11111111111111">
+            <input type="text" class="form-control input-lg txtGameCode" placeholder="Gamecode" value="11111111111111">
       <span class="input-group-btn">
-        <button class="btn btn-primary copybtn" type="button">Kopieren</button>
+        <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
       </span>
         </div><!-- /input-group --><br><br>
 
