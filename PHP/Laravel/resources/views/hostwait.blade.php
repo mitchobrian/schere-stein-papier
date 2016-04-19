@@ -17,11 +17,11 @@
       </span>
         </div><!-- /input-group --><br><br>
 
-            <img src="images/facebook.png">
-            <img src="images/google-plus.png">
-            <img src="images/instagram.png">
-            <img src="images/tumblr.png">
-            <img src="images/youtube.png">
+        <img src="images/facebook.png">
+        <img src="images/google-plus.png">
+        <img src="images/instagram.png">
+        <img src="images/tumblr.png">
+        <img src="images/youtube.png">
         <img src="images/twitter.png">
 
 
@@ -30,6 +30,8 @@
 
 
     <script>
+
+        //Countdown
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
             setInterval(function () {
@@ -53,6 +55,8 @@
             startTimer(fifteenMinutes, display);
         };
 
+
+        //Copy-Funktion
         var copyTextareaBtn = document.querySelector('.copybtn');
 
         copyTextareaBtn.addEventListener('click', function (event) {

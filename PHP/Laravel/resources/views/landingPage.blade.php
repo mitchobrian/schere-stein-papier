@@ -37,7 +37,7 @@
         </div> 
         <div>
             <h4><i>Oder</i> </h4>
-            <a class="btn btn-primary btn-lg" href="" role="button">...erstelle hier ein Spiel!</a>
+            <a class="btn btn-primary btn-lg" href="{{URL::route('hostwait')}}" role="button">...erstelle hier ein Spiel!</a>
         </div>  
       </div>
     </div>

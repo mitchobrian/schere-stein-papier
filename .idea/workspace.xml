@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="483b5871-6083-44f3-aa95-e1d112908cf3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/Laravel/app/Http/Controllers/HostWaitController.php" afterPath="$PROJECT_DIR$/PHP/Laravel/app/Http/Controllers/HostWaitController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php" afterPath="$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/Laravel/resources/views/hostwait.blade.php" afterPath="$PROJECT_DIR$/PHP/Laravel/resources/views/hostwait.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php" afterPath="$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php" />
@@ -40,7 +41,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PHP/Laravel/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
+            <state relative-caret-position="323">
               <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
               <folding>
                 <element signature="e#7#136#0#PHP" expanded="true" />
@@ -75,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+              <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -84,8 +85,8 @@
       <file leaf-file-name="landingPage.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            <state relative-caret-position="442">
+              <caret line="39" column="74" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -94,8 +95,18 @@
       <file leaf-file-name="hostwait.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/hostwait.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="561">
+              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HostWaitController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PHP/Laravel/app/Http/Controllers/HostWaitController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -112,10 +123,11 @@
       <list>
         <option value="$PROJECT_DIR$/PHP/Laravel/resources/views/contact.blade.php" />
         <option value="$PROJECT_DIR$/PHP/Laravel/public/index.php" />
-        <option value="$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php" />
         <option value="$PROJECT_DIR$/PHP/Laravel/resources/views/master.blade.php" />
         <option value="$PROJECT_DIR$/PHP/Laravel/resources/views/hostwait.blade.php" />
+        <option value="$PROJECT_DIR$/PHP/Laravel/app/Http/Controllers/HostWaitController.php" />
+        <option value="$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php" />
+        <option value="$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -159,6 +171,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -372,7 +385,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,15 +443,17 @@
       <workItem from="1460925030864" duration="4360000" />
       <workItem from="1460970444146" duration="16000" />
       <workItem from="1460984929485" duration="1099000" />
-      <workItem from="1460998189986" duration="3341000" />
+      <workItem from="1460998189986" duration="4170000" />
+      <workItem from="1461018927767" duration="58000" />
+      <workItem from="1461069530720" duration="297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10079000" />
+    <option name="totallyTimeSpent" value="11263000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -477,6 +491,130 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding>
+            <element signature="e#7#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/contact.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <marker date="1460926498967" expanded="true" signature="377:492" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="389:490" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="413:489" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="589:716" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="601:714" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="626:713" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="802:959" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="818:957" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="845:956" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="1003:1080" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="1017:1078" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/hostwait.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding>
+            <element signature="e#7#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/contact.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <marker date="1460926498967" expanded="true" signature="377:492" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="389:490" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="413:489" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="589:716" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="601:714" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="626:713" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="802:959" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="818:957" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="845:956" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="1003:1080" placeholder="..." />
+            <marker date="1460926498967" expanded="true" signature="1017:1078" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/hostwait.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -707,15 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/Laravel/app/Http/Controllers/HostWaitController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,22 +852,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding>
+            <element signature="e#7#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/app/Http/Controllers/HostWaitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+        <state relative-caret-position="170">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -763,28 +901,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/Laravel/public/index.php">
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/landingPage.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="e#7#136#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="39" column="74" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/master.blade.php">
+    <entry file="file://$PROJECT_DIR$/PHP/Laravel/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        <state relative-caret-position="357">
+          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PHP/Laravel/resources/views/hostwait.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="561">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
           <folding />
         </state>
       </provider>

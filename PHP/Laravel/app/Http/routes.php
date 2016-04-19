@@ -27,9 +27,8 @@ Route::get('gameend', function() {
 	return view('gameend');
 });
 
-Route::get('hostwait', function() {
-	return view('hostwait');
-});
+Route::get('hostwait',
+	['as' => 'hostwait', 'uses' => 'HostWaitController@index']);
 
 
 Route::get('contact', 
