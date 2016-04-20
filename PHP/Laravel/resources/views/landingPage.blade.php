@@ -20,11 +20,11 @@
   <form class="form-inline" role="form" style="margin-left: -16px;">
     <div class="form-group">
       <label class="sr-only" for="Username">Name</label>
-      <input type="Username" class="form-control" id="Username" placeholder="Username">
+      <input type="Username" class="form-control input-lg" id="Username" placeholder="Username">
     </div>
     <div class="form-group" style="margin-left: 20px;">
       <label class="sr-only" for="Gamecode">Spielcode</label>
-      <input type="Gamecode" class="form-control" id="Gamecode" placeholder="Spielcode">
+      <input type="Gamecode" class="form-control input-lg" id="Gamecode" placeholder="Spielcode">
     </div>
   </form>
 </div>         
