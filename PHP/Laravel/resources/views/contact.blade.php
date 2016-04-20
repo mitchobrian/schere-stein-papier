@@ -1,6 +1,10 @@
-{{ Html::style('css/contact2.css') }}
+
 @extends('master')
+{{ Html::style('css/contact2.css') }}
 @section('title', 'Kontakt') 
+
+@section('content')
+
 <h1>Kontaktformular </h1>
 
 <ul>
@@ -45,4 +49,5 @@
 		  array('class'=>'btn btn-primary form-control')) !!}
 	</div>
 </div>
+@stop
 {!! Form::close() !!}

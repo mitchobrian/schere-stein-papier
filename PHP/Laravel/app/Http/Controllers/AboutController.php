@@ -22,8 +22,8 @@ class AboutController extends Controller
             'user_message' => $request->get('message')
         ), function($message)
     {
-        $message->from('wj@wjgilmore.com');
-        $message->to('wj@wjgilmore.com', 'Admin')->subject('TODOParrot Feedback');
+        $message->from('schere.stein.papier.test@gmail.com');
+        $message->to('schere.stein.papier.test@gmail.com', 'passwort123')->subject('Schnick Scnhnack Schnuck Feedback');
     });
 		return \Redirect::route('contact')->with('message', 'Thanks for contacting us!');
     }
