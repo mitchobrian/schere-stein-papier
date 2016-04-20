@@ -13,9 +13,9 @@
         
         
         <div id="auswahl-div">
-            <div class="auswahl"><span>Schere</span></div>
-            <div class="auswahl"><span>Stein</span></div>
-            <div class="auswahl"><span>Papier</span></div>
+            <div class="auswahl"><span><a href="{{URL::route('gameend')}}" >Schere</a></span></div>
+            <div class="auswahl"><span><a href="{{URL::route('gameend')}}" >Stein</a></span></div>
+            <div class="auswahl"><span><a href="{{URL::route('gameend')}}" >Papier</a></span></div>
         </div>
       
 		<div class="container" style="text-align:center;" >

@@ -23,9 +23,9 @@ Route::get('gamepage', function() {
 	return view('gamepage');
 });
 
-Route::get('gameend', function() {
-	return view('gameend');
-});
+Route::get('gameend',
+	['as' => 'gameend', 'uses' => 'GameEndController@index']);
+
 
 Route::get('hostwait',
 	['as' => 'hostwait', 'uses' => 'HostWaitController@index']);
