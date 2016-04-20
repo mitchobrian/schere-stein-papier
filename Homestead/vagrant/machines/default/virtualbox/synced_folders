@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/Code":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/Code","hostpath":"C:/xampp/htdocs/schere-stein-papier/PHP","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/xampp/htdocs/schere-stein-papier/Homestead","disabled":false,"__vagrantfile":true}}}
