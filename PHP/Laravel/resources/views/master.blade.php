@@ -25,13 +25,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Schnick Schnack Schnuck</a>
+              <!-- <a class="navbar-brand" href="#">Schnick Schnack Schnuck</a> -->
+             <a class="navbar-brand" href="{{ URL::route('landingPage')}}" id="navbar-brand"><img src="images/sss_logo_small.png"></a> 
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Startseite <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="{{ URL::route('landingPage')}}">Startseite <span class="sr-only">(current)</span></a></li>
                 <li><a href="{{ URL::route('contact')}}">Kontakt</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -44,7 +45,7 @@
 
         
     <hr>
-      <footer>
+      <footer style="text-align:center;">
         <p>&copy; 2016 Beuthbros</p>
 		{{ Html::link('contact','Kontakt')}}
         <!--<button type="button" class="btn btn-link" style="margin-left:-13px;">Kontakt</button>  -->

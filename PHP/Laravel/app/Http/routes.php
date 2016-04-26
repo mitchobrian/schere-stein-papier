@@ -23,6 +23,14 @@ Route::get('gamepage', function() {
 	return view('gamepage');
 });
 
+Route::get('landingPage',
+	['as' => 'landingPage', 'uses' => 'LandingPageController@index']);
+
+
+Route::get('gamepage',
+	['as' => 'gamepage', 'uses' => 'GamePageController@index']);
+
+
 Route::get('gameend',
 	['as' => 'gameend', 'uses' => 'GameEndController@index']);
 

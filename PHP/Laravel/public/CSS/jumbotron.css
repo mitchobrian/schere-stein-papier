@@ -4,15 +4,28 @@
   margin-bottom: -40px;
 }*/
 
+
 .jumbotron{
     margin-bottom: 15px;
     background-color: darkgrey;
    <!-- background-image: url(../images/background.jpg); -->
-    background-position: 0% -20%;
+    background-position: 0%;
     background-size:auto;
     background-repeat: no-repeat;
-    color: white;
+    color: black;
     <!-- text-shadow: black 0.3em 0.3em 0.3em; -->
+}
+
+.navbar-brand>img{
+   height: 210%;
+   width: auto;
+   margin: auto;
+   margin-top: -12px;
+}
+
+#Logo{
+  width: 20px;
+  height: 20px;
 }
 
 #Username{
@@ -24,3 +37,4 @@
     length:20px;
     font-size:14pt;
 }
+

@@ -1,7 +1,7 @@
 
 @extends('master')
-{{ Html::style('css/contact2.css') }}
-@section('title', 'Kontakt') 
+
+@section('title', 'Kontakt')
 
 @section('content')
 
