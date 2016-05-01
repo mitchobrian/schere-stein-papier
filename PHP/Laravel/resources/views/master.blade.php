@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link href="CSS/jumbotron.css" rel="stylesheet">
+	<link href="CSS/style.css" rel="stylesheet">
 </head>
 
-<body>
-
+<body>   
+    
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,9 +44,9 @@
     </div>
 
         
-    <hr>
+    
       <footer style="text-align:center;">
-        <p>&copy; 2016 Beuthbros</p>
+          <strong><p>&copy; 2016 Beuthbros</p></strong>
 		{{ Html::link('contact','Kontakt')}}
         <!--<button type="button" class="btn btn-link" style="margin-left:-13px;">Kontakt</button>  -->
 		{{ Html::link('impressum','Impressum')}}

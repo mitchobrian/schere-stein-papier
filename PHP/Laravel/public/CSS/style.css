@@ -1,57 +1,98 @@
-
-
-.suchbalken {
-  background-color:yellow;	
-  padding:10px;
-  border-radius: 20px;
-  border-color: grey;
-  border-width: 1px;
-  border-style: solid;
+body{
+    background-image: url(../images/bg2.png);
 }
 
-.tn {
-	border-radius:20px;
+.jumbotron {
+    margin-bottom: 15px;
+    background-image: url(../images/jumbo.jpg);
+    background-width: auto;
+    <!-- background-color: rgba(0,0,0,.1); -->
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: black;
+    height: 800px;
+    width: auto;
 }
 
-.kontaktbalken {
-  margin-top:10px;
-  position:relative;
-  height:120px;
-  background-color: #ff7500;
-  padding:10px;
-  border-radius: 5px;
-  border-color: black;
-  border-width: 1px;
-  border-style: none;
-  
-  visibility:hidden;
+.navbar-brand>img {
+    height: 210%;
+    width: auto;
+    margin: auto;
+    margin-top: -12px;
 }
 
-.kontaktlogo {
-  margin-left:10px;
-  height:100px;
-  width:100px;
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
-  float:left;
-  
-  text-align:center
+#Logo {
+    width: 20px;
+    height: 20px;
 }
 
-.kontaktinfos {
-	height:100%;
-	font-family:Arial, Helvetica, sans-serif;
-	float:left;
-	margin-left:10px;
-	
+#Username {
+    length: 200px;
+    font-size: 17pt;
 }
 
-.kontaktbutton {
-	margin-left:25px;
-	font-family:Arial, Helvetica, sans-serif;
-	float:left;
-	
+#Gamecode {
+    length: 20px;
+    font-size: 14pt;
 }
 
+
+#player-outer-div {
+    height: 300px;
+    width: 100%;
+    //overflow:hidden;
+}
+
+#player1-div {
+    font-size: 50px;
+    position: relative;
+    left: 2%;
+    width: 200px;
+}
+
+#player2-div {
+    font-size: 50px;
+    position: relative;
+    right: -85%;
+    top: -24%;
+    width: 200px;
+}
+
+#auswahl-div {
+    display: table;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#auswertung-div {
+    text-align: center;
+    margin-top: -150px;
+}
+
+.auswahl {
+    font-size: 40px;
+    float: left;
+    margin: 25px;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-width: thin;
+}
+
+
+span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 200px;
+}
+
+/*button {
+    position: relative;
+    right:-47%;
+    height:50px;
+    width:100px;
+}*/
 

@@ -5,7 +5,7 @@
 
 @section('content')
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:white;">
     <!-- Impressum
     ================================================== -->
     <div class="col-sm-7">
@@ -42,7 +42,7 @@
 
 <!-- Haftungsausschluss (Disclaimer)
     ================================================== -->
-<div class="col-sm-12">
+<div class="col-sm-12" style="background-color:white;">
     <h2 id="disclaimer">Haftungsausschluss (Disclaimer)</h2>
     <strong>1. Warnhinweis zu Inhalten</strong>
     <p>Die kostenlosen und frei zugänglichen Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt. Der Anbieter dieser Webseite übernimmt jedoch keine Gewähr für die Richtigkeit und Aktualität der bereitgestellten kostenlosen und frei zugänglichen journalistischen Ratgeber und Nachrichten. Die Nutzung dieser Webseiteninhalte erfolgt auf eigene Gefahr. Allein durch den Aufruf dieser kostenlosen und frei zugänglichen Inhalte kommt keinerlei Vertragsverhältnis zwischen dem Nutzer und dem Anbieter zustande, insoweit fehlt es am Rechtsbindungswillen des Anbieters.</p>

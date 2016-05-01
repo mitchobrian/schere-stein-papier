@@ -1,9 +1,8 @@
 @extends('master') 
 
 @section('title', 'LandingPage') 
-{{ Html::style('../../public/CSS/jumbotron.css') }}
 {{ Html::style('css/bootstrap.min.css') }}
-{{ Html::style('css/jumbotron.css') }}
+{{ Html::style('css/style.css') }}
 
 
 @section('content')
@@ -11,7 +10,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container" style="margin-bottom: 150px;margin-top:-20px;" align="center">  
-        <img src="images/sss_logo_large.png" id="Logo" style="width:800px;height:200px;"> 
+        <img src="images/sss_logo_large.png" id="Logo" style="width:850px;height:200px;"> 
         <p style="margin-top:50px;">Spiele Schere-Stein-Papier gegen einen Freund! Schaffst du es auf der Rangliste nach ganz oben?</p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
   <hr>

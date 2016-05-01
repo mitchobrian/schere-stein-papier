@@ -1,10 +1,9 @@
-﻿@extends('master') 
+@extends('master') 
 
 @section('title', 'Gameend') 
-{{ Html::style('../../public/CSS/jumbotron.css') }}
-{{ Html::style('css/gameend.css') }}           
+{{ Html::style('css/style.css') }}           
 {{ Html::style('css/bootstrap.min.css') }}
-{{ Html::style('css/jumbotron.css') }}
+
 
 @section('content')
     

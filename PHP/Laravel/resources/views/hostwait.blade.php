@@ -6,30 +6,33 @@
 @section('content')
     {{ Html::style('css/hostwait.css') }}
 
+    <div class="jumbotron">
+        
     <div class="col-lg-12 main">
-        <h1>---USERNAME---...</h1> <h4>...bitte warte, bis dein Partner das Spiel betritt.</h4>
+        <h3>---USERNAME---...</h3> <h4>...bitte warte, bis dein Partner das Spiel betritt.</h4>
 
         <p id="usrimg"><img src="images/usr.png"> </p>
 
-        <p class="alert alert-info">
+        <p class="alert alert-info" id="alert" style="width: 800px;">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
             <span class="sr-only">Info:</span>
-            Das Spiel wird in <strong><span id="time">15:00</span></strong> Minuten beendet, falls der Partner nicht
-            einsteigt. Bitte schicke ihm den GameCode, damit er dem Spiel beitreten kann.</p>
+            <strong id="time">15:00</strong> <strong>Verschicke diesen Link an einen Freund!</strong>
 
-        <div class="input-group">
-            <input type="text" class="form-control input-lg txtGameCode" placeholder="Gamecode" value="11111111111111">
-      <span class="input-group-btn">
+        <div class="input-group" style="display:inline;">
+            <input type="text" class="form-control input-lg txtGameCode" placeholder="Gamecode" value="11111111111111" style="width: 800px;">
         <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
-      </span>
-        </div><!-- /input-group --><br><br>
+        </div>
+        <!-- /input-group -->
 
-        <img src="images/facebook.png">
-        <img src="images/google-plus.png">
-        <img src="images/instagram.png">
-        <img src="images/tumblr.png">
-        <img src="images/youtube.png">
-        <img src="images/twitter.png">
+              
+    <div>
+        <br><br><br>
+        <img src="images/facebook.png" style="height: 70px;">
+        <img src="images/google-plus.png" style="height: 70px;">
+        <img src="images/instagram.png" style="height: 70px;">
+        <img src="images/tumblr.png" style="height: 70px;">
+        <img src="images/youtube.png" style="height: 70px;">
+        <img src="images/twitter.png" style="height: 70px;">
 
 
     </div><!-- /.col-lg-6 -->
@@ -79,5 +82,6 @@
             }
         });
     </script>
+</div>
 
 @stop

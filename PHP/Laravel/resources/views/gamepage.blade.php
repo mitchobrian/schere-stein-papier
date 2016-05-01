@@ -1,7 +1,7 @@
 @extends('master') 
 
 @section('title', 'Gamepage') 
-{{ Html::style('css/gamepage.css') }}
+{{ Html::style('css/style.css') }}
 
 @section('content')
 
