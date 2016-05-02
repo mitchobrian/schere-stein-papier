@@ -10,22 +10,25 @@
     <div class="jumbotron">
       <div class="container-fluid">  
 
-        <h1 align="center">Spielauswertung!</h1>
     <div id="player-outer-div">
             <div id="player1-div">Player 1</div>
             <div id="player2-div">Player 2</div>
     </div>
-         
+         <p id="rundeundspielauswertung">
+          <h1 align="center">Spielauswertung!</h1>
+         </p>
+          
+          
  <!-- Auswertung -->   
- <div id="auswertung-div">
+ <div id="wählenundauswertung-div">
     <h2>Schere schlägt Papier (Player 1 gewinnt)</h2> 
  </div>
-<br><br><br><br>
- <div id="auswahl-div" style="margin-top:-70px;">
-    <div class="auswahl"><span>Schere</span></div>
+<br><br><br>
+ <div id="auswahl-div" style="margin-top:-60px;">
+    <div class="auswahl"><img src="images/schere.png" style="margin-top:20px;"</img><span></span></div>
     <div class="auswahl"><span>VS</span></div>
     <!-- <div class="auswahl"><span>Stein</span></div> -->
-    <div class="auswahl"><span>Papier</span></div>
+    <div class="auswahl"><img src="images/papier_broke.png" style="margin-top:20px;"</img><span></span></div>
  </div>
           
           
@@ -33,7 +36,7 @@
      <div class="container" style="text-align:center;" >
         <div>
             <h3>Zur Zeit steht es X zu X!</h3>
-            <button type="button" class="btn btn-primary btn-lg" style="background:Green;">Nochmal?</button>      
+            <a class="btn btn-primary btn-lg" href="{{URL::route('gamepage')}}" style="background:Green;" role="button">Nochmal?</a>
         </div>  
       </div>
 </div>

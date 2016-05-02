@@ -5,11 +5,13 @@
 
 @section('content')
 
-<div class="container-fluid" style="background-color:white;">
+
+<div class="impressum" style="font-size:13.5px;color:darkwhite;background:url('../images/jumbo.png')">
+<div class="container-fluid">
     <!-- Impressum
     ================================================== -->
     <div class="col-sm-7">
-        <h1 id="kontakt">Impressum</h1>
+        <h2 id="kontakt">Impressum</h2>
         <p>Verantwortlich nach § 5 TMG:</p>
 
         <address>
@@ -42,8 +44,8 @@
 
 <!-- Haftungsausschluss (Disclaimer)
     ================================================== -->
-<div class="col-sm-12" style="background-color:white;">
-    <h2 id="disclaimer">Haftungsausschluss (Disclaimer)</h2>
+<div class="col-sm-12" style="font-size:13.5px;background:url('../images/jumbo.png')">
+    <h3 id="disclaimer">Haftungsausschluss (Disclaimer)</h3>
     <strong>1. Warnhinweis zu Inhalten</strong>
     <p>Die kostenlosen und frei zugänglichen Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt. Der Anbieter dieser Webseite übernimmt jedoch keine Gewähr für die Richtigkeit und Aktualität der bereitgestellten kostenlosen und frei zugänglichen journalistischen Ratgeber und Nachrichten. Die Nutzung dieser Webseiteninhalte erfolgt auf eigene Gefahr. Allein durch den Aufruf dieser kostenlosen und frei zugänglichen Inhalte kommt keinerlei Vertragsverhältnis zwischen dem Nutzer und dem Anbieter zustande, insoweit fehlt es am Rechtsbindungswillen des Anbieters.</p>
 
@@ -67,6 +69,7 @@
     <strong>6. GNU & GPL Lizenzen:</strong>
     <p>Die Webseite beinhalten Codes, die von Dritt-Anbietern entwickelt wurden und der GNU General Public License ("GPL") oder GNU Lesser General Public License ("LGPL") unterliegen.</p>
 
+</div>
 </div>
 
 @stop

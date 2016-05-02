@@ -1,46 +1,40 @@
-@extends('master')
+@extends('master') 
 
-@section('title', 'Impressum')
+@section('title', 'LandingPage') 
+{{ Html::style('css/bootstrap.min.css') }}
+{{ Html::style('css/style.css') }}
 
 
 @section('content')
-    {{ Html::style('css/hostwait.css') }}
-    {{ Html::style('css/bootstrap.min.css') }}
-    {{ Html::style('css/style.css') }}
-
+    
+    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-
-    <div class="container-fluid">  
-
-        <h3>---USERNAME---...</h3> <h4>...bitte warte, bis dein Partner das Spiel betritt.</h4>
-
-        <p id="usrimg"><img src="images/usr.png"> </p>
-
+      <div class="container-fluid" style="margin-bottom: 150px;margin-top:-20px;" align="center">  
+          <h2 style="margin-top:50px;">PLAYER 1 bitte warte, bis dein Partner das Spiel betritt.</h2>
+  <hr>
+       <img src="images/loading.gif" alt="Wartegif" style="height:200px;">       
+ <br><br>
         <p class="alert alert-info" id="alert" style="width: 800px;">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
             <span class="sr-only">Info:</span>
-            <strong id="time">15:00</strong> <strong>Verschicke diesen Link an einen Freund!</strong>
-
-        <div class="input-group" style="display:inline;">
-            <input type="text" class="form-control input-lg txtGameCode" placeholder="Gamecode" value="11111111111111" style="width: 800px;">
+            <strong id="time">15:00</strong> <strong>Verschicke diesen Link an einen Freund!</strong>   
+            
+            
+        <div class="input-group">
+            <br>
+        <input type="text" class="form-control input-lg txtGameCode" placeholder="Gamecode" value="111111111111" style="text-align:center;width: 300px;">
         <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
         </div>
         <!-- /input-group -->
 
-              
-        <br>
+      <div class="social-network" style="text-align:left;">       
+        
         <img src="images/facebook.png" style="height: 70px;">
         <img src="images/google-plus.png" style="height: 70px;">
-        <img src="images/instagram.png" style="height: 70px;">
-        <img src="images/tumblr.png" style="height: 70px;">
-        <img src="images/youtube.png" style="height: 70px;">
         <img src="images/twitter.png" style="height: 70px;">
 
-
-    <!-- /.col-lg-6 -->
-
-
-
+      </div>   
+          
     <script>
 
         //Countdown
@@ -84,7 +78,17 @@
             }
         });
     </script>
+          
+    </div>
 </div>
-</div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../public/JS/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../public/JS/bootstrap.min.js"></script>
 
 @stop

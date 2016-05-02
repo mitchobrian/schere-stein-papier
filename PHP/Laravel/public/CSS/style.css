@@ -1,6 +1,7 @@
 body{
     background-image: url(../images/bg2.png);
-    background-size:contain:
+    background-size:cover;
+    background-repeat:no-repeat;
 }
 
 .jumbotron {
@@ -70,6 +71,11 @@ body{
     margin-top: -12px;
 }
 
+.social-network{
+    margin-top: 145px;
+}
+
+
 #Logo {
     width: 20px;
     height: 20px;
@@ -102,7 +108,7 @@ body{
 #player2-div {
     font-size: 50px;
     position: relative;
-    right: -85%;
+    right: -80%;
     top: -24%;
     width: 200px;
 }
@@ -115,9 +121,13 @@ body{
     vertical-align: middle;
 }
 
-#auswertung-div {
+#rundeundspielauswertung{
+    margin-top: -200px;
+}
+
+#wählenundauswertung-div {
     text-align: center;
-    margin-top: -150px;
+    margin-top: 100px;
 }
 
 .auswahl {
@@ -126,8 +136,6 @@ body{
     margin: 25px;
     width: 200px;
     height: 200px;
-    border-style: solid;
-    border-width: thin;
 }
 
 
