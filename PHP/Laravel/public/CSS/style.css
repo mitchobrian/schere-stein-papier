@@ -9,12 +9,12 @@ body{
     background-size:cover;
     color: black;
     min-height:82%;
-    padding-bottom:7%;
+    max-height:100%;
 
 }
 
 .navbar-brand>img {
-    height: 210%;
+    height: 220%;
     width: auto;
     margin: auto;
     margin-top: -12px;
