@@ -8,13 +8,14 @@
 @section('content')
     
     <div class="jumbotron">
-      <div class="container">  
- <h1 align="center">Spielauswertung!</h1>
+      <div class="container-fluid">  
+
+        <h1 align="center">Spielauswertung!</h1>
     <div id="player-outer-div">
             <div id="player1-div">Player 1</div>
             <div id="player2-div">Player 2</div>
     </div>
-    </div>     
+         
  <!-- Auswertung -->   
  <div id="auswertung-div">
     <h2>Schere schlägt Papier (Player 1 gewinnt)</h2> 
@@ -36,6 +37,7 @@
         </div>  
       </div>
 </div>
+</div>        
 
 
 

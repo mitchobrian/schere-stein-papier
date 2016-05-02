@@ -5,10 +5,12 @@
 
 @section('content')
     {{ Html::style('css/hostwait.css') }}
+    {{ Html::style('css/bootstrap.min.css') }}
+    {{ Html::style('css/style.css') }}
 
     <div class="jumbotron">
-        
-    <div class="col-lg-12 main">
+    <div class="container-fluid">  
+
         <h3>---USERNAME---...</h3> <h4>...bitte warte, bis dein Partner das Spiel betritt.</h4>
 
         <p id="usrimg"><img src="images/usr.png"> </p>
@@ -25,8 +27,7 @@
         <!-- /input-group -->
 
               
-    <div>
-        <br><br><br>
+        <br>
         <img src="images/facebook.png" style="height: 70px;">
         <img src="images/google-plus.png" style="height: 70px;">
         <img src="images/instagram.png" style="height: 70px;">
@@ -35,7 +36,7 @@
         <img src="images/twitter.png" style="height: 70px;">
 
 
-    </div><!-- /.col-lg-6 -->
+    <!-- /.col-lg-6 -->
 
 
 
@@ -82,6 +83,7 @@
             }
         });
     </script>
+</div>
 </div>
 
 @stop

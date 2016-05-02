@@ -2,10 +2,12 @@
 
 @section('title', 'Gamepage') 
 {{ Html::style('css/style.css') }}
+{{ Html::style('css/bootstrap.min.css') }}
 
 @section('content')
 
 	 <div class="jumbotron">
+        <div class="container-fluid">  
         <div id="player-outer-div">
             <div id="player1-div">Player 1</div>
             <div id="player2-div">Player 2</div>
@@ -21,5 +23,6 @@
 		<div class="container" style="text-align:center;" >
 			<button class="btn btn-primary btn-lg">Auswählen</button>
 		</div>
+         </div>
 	</div>
 @stop
