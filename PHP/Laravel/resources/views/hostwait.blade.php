@@ -9,6 +9,7 @@
     {{ Html::style('css/style.css') }}
 
     <div class="jumbotron">
+
     <div class="container-fluid">  
 
         <h3>---USERNAME---...</h3> <h4>...bitte warte, bis dein Partner das Spiel betritt.</h4>
