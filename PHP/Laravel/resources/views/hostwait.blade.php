@@ -22,7 +22,7 @@
             
         <div class="input-group">
             <br>
-        <input type="text" class="form-control input-lg txtGameCode" placeholder="Gamecode" value="111111111111" style="text-align:center;width: 300px;">
+        <input type="text" class="form-control input-lg txtGameCode" placeholder="Gamecode" value="" style="text-align:center;width: 300px;">
         <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
         </div>
         <!-- /input-group -->
@@ -36,6 +36,18 @@
       </div>   
           
     <script>
+        //Generate Gamecode
+        window.addEventListener('load', function () {
+            var gamecode = document.querySelector('.txtGameCode');
+
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for( var i=0; i < 6; i++ )
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            gamecode.value = window.location.href + "/" + text;
+        })
 
         //Countdown
         function startTimer(duration, display) {
