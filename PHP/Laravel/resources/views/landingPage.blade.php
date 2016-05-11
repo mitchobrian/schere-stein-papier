@@ -16,7 +16,7 @@
   <hr>
  <br><br>
  <!-- ANMELDEFORM -->         
- <div class="container" style="text-align:center;">
+ {{--<div class="container" style="text-align:center;">
   <form class="form-inline" role="form">
     <div class="form-group">
       <label class="sr-only" for="Username">Name</label>
@@ -29,18 +29,30 @@
     </div>
     -->
   </form>
-</div>         
+</div>        --}}
           
           
  <!-- BUTTONS--> 
      <div class="container" style="text-align:center;" >
+
+         <form action="store" method="post">
+
+             <input  type="text" name="name" id="name">
+
+             <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg">
+
+             <input type="hidden" name="_token" value="{{ csrf_token()}}">
+
+         </form>
         <div>
             <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" role="button">Ab ins Spiel!!</a>
-        </div> 
-        <div>
-            <h4><i>Oder</i> </h4>
-            <a class="btn btn-primary btn-lg" href="{{URL::route('hostwait')}}" role="button">...erstelle hier ein Spiel!</a>
-        </div>  
+        </div>
+         {{--
+          <div>
+              <h4><i>Oder</i> </h4>
+
+              <a class="btn btn-primary btn-lg" href="{{URL::route('hostwait')}}" role="button">...erstelle hier ein Spiel!</a>
+          </div>  --}}
       </div>
           
     <!-- Modal -->
@@ -55,11 +67,26 @@
       </div>
       <div class="modal-body">
         <p>Bitte gebe deinen Spielcode ein</p>
-        <label class="sr-only" for="Gamecode">Spielcode</label>
-        <input type="Gamecode" class="form-control input-lg" id="Gamecode" placeholder="Spielcode" style="width: 400px;">
+       {{-- <label class="sr-only" for="Gamecode">Spielcode</label>
+
+        <input type="Gamecode" class="form-control input-lg" id="Gamecode" placeholder="Spielcode" style="width: 400px;">--}}
+
+          <form action="joinstore" method="post">
+
+              name<input  type="text" name="name" id="name">
+              code<input  type="text" name="code" id="code">
+
+              <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg">
+
+              <input type="hidden" name="_token" value="{{ csrf_token()}}">
+
+          </form>
+
+
+
       </div>
       <div class="modal-footer">
-        <a class="btn btn-primary btn-lg" href="{{URL::route('gamepage')}}" style="margin-right:160px;" role="button">Verbinden</a>
+        {{--<a class="btn btn-primary btn-lg" href="{{URL::route('gamepage')}}" style="margin-right:160px;" role="button">Verbinden</a>--}}
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

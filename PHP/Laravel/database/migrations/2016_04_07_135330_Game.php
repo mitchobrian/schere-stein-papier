@@ -14,9 +14,15 @@ class Game extends Migration
     {
         Schema::create('Games', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('username', 200);
-            $table->bigInteger('creatorid');
-            $table->bigInteger('opponentid');
+            $table->integer('user_a_id');
+            $table->foreign('user_a_id')->references('id')->on('users');
+            $table->integer('user_a_score');
+            $table->integer('user_b_id');
+            $table->foreign('user_b_id')->references('id')->on('users');
+            $table->integer('user_b_score');
+            $table->timestamps();
+
+
         });    }
 
     /**

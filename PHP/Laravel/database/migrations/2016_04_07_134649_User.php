@@ -14,6 +14,7 @@ class User extends Migration
     {
         Schema::create('Users', function (Blueprint $table) {
             $table->bigIncrements('id');
+
             $table->string('username', 200);
             $table->timestamps();
         });    }
