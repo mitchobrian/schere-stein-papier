@@ -71,16 +71,14 @@
 
         <input type="Gamecode" class="form-control input-lg" id="Gamecode" placeholder="Spielcode" style="width: 400px;">--}}
 
-          <form action="joinstore" method="post">
+
 
               name<input  type="text" name="name" id="name">
               code<input  type="text" name="code" id="code">
 
-              <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg">
+              <input  type="button" name ="erstellen" id="submit" class="btn btn-primary btn-lg" onclick="verbinde()">
 
-              <input type="hidden" name="_token" value="{{ csrf_token()}}">
 
-          </form>
 
 
 
@@ -98,6 +96,32 @@
     </div>
 </div>
 
+<script>
+
+    function verbinde() {
+        var conn = new WebSocket('ws://127.0.0.1:8080');
+
+        conn.onmessage = function(e) {
+
+
+
+            document.location.href="{!! route('gamepage') !!}";
+
+        };
+        conn.onopen = function(e) {
+            console.log("Connection established!");
+            conn.send(JSON.stringify({command: "subscribe", channel: "bernd"}));
+            conn.send(JSON.stringify({command: "message", message: "this is message"}));
+        };
+
+        //conn.send(JSON.stringify({command: "message", message: "this is message"}));
+
+
+
+
+        console.log("Ausgeführt");
+    }
+</script>
 
 
     <!-- Bootstrap core JavaScript

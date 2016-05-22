@@ -6,7 +6,9 @@
 
 
 @section('content')
-<?php
+
+
+{{--
 use Ratchet\Server\IoServer;
 use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
@@ -19,9 +21,8 @@ $server = IoServer::factory(
         new HostWaitController(),
         8080
 );
-
 $server->run();
-?>
+--}}
 
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -39,7 +40,7 @@ $server->run();
 
         <div class="input-group">
             <br>
-            <input type="text" class="form-control input-lg txtGameCode" placeholder="Gamecode" value=""
+            <input type="text" class="form-control input-lg txtGameCode" placeholder="{{$users->username}}" value=""
                    style="text-align:center;width: 300px;">
             <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
         </div>
@@ -53,19 +54,23 @@ $server->run();
 
         </div>
 
-        <script>
+      <script>
             //Generate Gamecode
-            window.addEventListener('load', function () {
+
+               /* window.addEventListener('load', function () {
                 var gamecode = document.querySelector('.txtGameCode');
 
-                var text = "";
-                var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                var text = "keks";
+                //var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-                for (var i = 0; i < 6; i++)
-                    text += possible.charAt(Math.floor(Math.random() * possible.length));
+                //for (var i = 0; i < 6; i++)
+                  //  text += possible.charAt(Math.floor(Math.random() * possible.length));
 
                 gamecode.value = window.location.href + "/" + text;
-            });
+            });*/
+
+
+
 
             //Countdown
             function startTimer(duration, display) {
@@ -85,10 +90,39 @@ $server->run();
                 }, 1000);
             }
 
+            function socketfunk() {
+
+
+
+                var conn = new WebSocket('ws://127.0.0.1:8080');
+
+                conn.onmessage = function(e) {
+
+
+                    conn.send(JSON.stringify({command: "message", message: "this is message"}));
+                    document.location.href="{!! route('gamepage') !!}";
+
+                };
+                conn.onopen = function(e) {
+                    console.log("Connection established!");
+                    conn.send(JSON.stringify({command: "subscribe", channel: "{{$users->username}}}"}));
+                };
+
+
+                console.log("Ausgeführt");
+            }
+
             window.onload = function () {
                 var fifteenMinutes = 60 * 15,
                         display = document.querySelector('#time');
+                socketfunk();
                 startTimer(fifteenMinutes, display);
+
+
+
+
+
+
             };
 
 
@@ -107,7 +141,10 @@ $server->run();
                     alert('Konnte Gamecode nicht kopieren...');
                 }
             });
-        </script>
+
+      </script>
+
+
 
     </div>
 </div>

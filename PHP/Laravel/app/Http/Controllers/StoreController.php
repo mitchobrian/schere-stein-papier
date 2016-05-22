@@ -12,6 +12,11 @@ use App\Http\Requests;
 
 use Illuminate\Support\Facades\Input;
 
+use Ratchet\Server\IoServer;
+use Ratchet\Http\HttpServer;
+use Ratchet\WebSocket\WsServer;
+use App\Http\Controllers\ChatController;
+
 class StoreController extends Controller
 {
     /**
@@ -47,7 +52,7 @@ class StoreController extends Controller
         $users->save();
 
 
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+       /* $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < 10; $i++) {
@@ -55,9 +60,12 @@ class StoreController extends Controller
         }
 
         //Abfragen ob es den Code schon gibt!!!!
-        //extra Tabelle gamecode???
+        //extra Tabelle gamecode???*/
 
-        return view('hostwait', $randomString);
+
+
+        return view('hostwait', compact('users'));
+
 
     }
 
@@ -70,8 +78,12 @@ class StoreController extends Controller
         $users->username = input::get("name");
         $users->save();
 
+        $code = input::get("code");
 
-        return view('gamepage');
+
+
+
+        return view('gamepage', compact('code'));
 
     }
 
