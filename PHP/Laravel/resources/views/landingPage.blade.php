@@ -101,25 +101,16 @@
     function verbinde() {
         var conn = new WebSocket('ws://127.0.0.1:8080');
 
+        var chanelname = document.getElementById('code').value;
+
         conn.onmessage = function(e) {
-
-
-
             document.location.href="{!! route('gamepage') !!}";
-
         };
         conn.onopen = function(e) {
             console.log("Connection established!");
-            conn.send(JSON.stringify({command: "subscribe", channel: "bernd"}));
+            conn.send(JSON.stringify({command: "subscribe", channel: chanelname}));
             conn.send(JSON.stringify({command: "message", message: "this is message"}));
         };
-
-        //conn.send(JSON.stringify({command: "message", message: "this is message"}));
-
-
-
-
-        console.log("Ausgeführt");
     }
 </script>
 

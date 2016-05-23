@@ -96,6 +96,10 @@ $server->run();
 
                 var conn = new WebSocket('ws://127.0.0.1:8080');
 
+                var chanelname = "{{$users->username}}";
+
+
+
                 conn.onmessage = function(e) {
 
 
@@ -105,7 +109,8 @@ $server->run();
                 };
                 conn.onopen = function(e) {
                     console.log("Connection established!");
-                    conn.send(JSON.stringify({command: "subscribe", channel: "{{$users->username}}}"}));
+                    conn.send(JSON.stringify({command: "subscribe", channel: chanelname}));
+                    console.log(chanelname);
                 };
 
 
