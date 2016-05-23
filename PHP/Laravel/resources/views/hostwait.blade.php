@@ -40,7 +40,7 @@ $server->run();
 
         <div class="input-group">
             <br>
-            <input type="text" class="form-control input-lg txtGameCode" placeholder="{{$users->username}}" value=""
+            <input type="text" class="form-control input-lg txtGameCode"  id="gamecode" placeholder="CODE" value=""
                    style="text-align:center;width: 300px;">
             <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
         </div>
@@ -57,17 +57,17 @@ $server->run();
       <script>
             //Generate Gamecode
 
-               /* window.addEventListener('load', function () {
+                window.addEventListener('load', function () {
                 var gamecode = document.querySelector('.txtGameCode');
 
-                var text = "keks";
-                //var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                var text = "";
+                var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-                //for (var i = 0; i < 6; i++)
-                  //  text += possible.charAt(Math.floor(Math.random() * possible.length));
+                for (var i = 0; i < 6; i++)
+                    text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-                gamecode.value = window.location.href + "/" + text;
-            });*/
+                gamecode.value = text;
+            });
 
 
 
@@ -96,7 +96,7 @@ $server->run();
 
                 var conn = new WebSocket('ws://127.0.0.1:8080');
 
-                var chanelname = "{{$users->username}}";
+                var chanelname = document.getElementById("gamecode").value;
 
 
 
