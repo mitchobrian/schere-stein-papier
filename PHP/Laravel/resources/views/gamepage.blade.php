@@ -24,9 +24,9 @@
         
         
         <div id="auswahl-div">
-    <div class="auswahl"><a href="{{URL::route('gameend')}}"> <img src="images/schere.png"  style="margin-top:20px;" </img><span></a></span></div>
-    <div class="auswahl"><a href="{{URL::route('gameend')}}"> <img src="images/stein_blau.png"  style="margin-top:20px;" </img><span></a></span></div>
-    <div class="auswahl"><a href="{{URL::route('gameend')}}"> <img src="images/papier_gold.png"  style="margin-top:20px;" </img><span></a></span></div>
+    <div class="auswahl"><a href="{{URL::route('gameend')}}"> <img src="images/auswahlIcons/schere/schere_links.png"  style="margin-top:20px;" </img><span></a></span></div>
+    <div class="auswahl"><a href="{{URL::route('gameend')}}"> <img src="images/auswahlIcons/stein/stein_links.png"  style="margin-top:20px;" </img><span></a></span></div>
+    <div class="auswahl"><a href="{{URL::route('gameend')}}"> <img src="images/auswahlIcons/papier/papier_links.png"  style="margin-top:20px;" </img><span></a></span></div>
         </div>
       
 		<!-- <div class="container" style="text-align:center;" >

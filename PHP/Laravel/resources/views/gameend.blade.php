@@ -25,10 +25,10 @@
  </div>
 <br><br><br>
  <div id="auswahl-div" style="margin-top:-60px;">
-    <div class="auswahl"><img src="images/schere.png" style="margin-top:20px;"</img><span></span></div>
+    <div class="auswahl"><img src="images/auswahlIcons/schere/gruen/schere_gruen_links.png" style="margin-top:20px;"</img><span></span></div>
     <div class="auswahl"><span>VS</span></div>
     <!-- <div class="auswahl"><span>Stein</span></div> -->
-    <div class="auswahl"><img src="images/papier_broke.png" style="margin-top:20px;"</img><span></span></div>
+    <div class="auswahl"><img src="images/auswahlIcons/papier/gif/papier_rechts_rot.gif" style="margin-top:20px;"</img><span></span></div>
  </div>
           
           
