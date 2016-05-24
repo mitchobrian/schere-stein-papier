@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class User extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class User extends Migration
     public function up()
     {
         Schema::create('Users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
 
             $table->string('username', 200);
             $table->timestamps();
-        });    }
+        });
+        //
+    }
 
     /**
      * Reverse the migrations.
@@ -26,6 +28,7 @@ class User extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('Users');
         //
     }
 }

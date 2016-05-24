@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Game extends Migration
+class CreateGamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,18 @@ class Game extends Migration
     public function up()
     {
         Schema::create('Games', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('user_a_id');
-            $table->foreign('user_a_id')->references('id')->on('users');
+            $table->increments('id');
+            /*$table->integer('user_a_id');
+            $table->foreign('user_a_id');
             $table->integer('user_a_score');
             $table->integer('user_b_id');
-            $table->foreign('user_b_id')->references('id')->on('users');
+            $table->foreign('user_b_id');
             $table->integer('user_b_score');
-            $table->timestamps();
+            $table->timestamps();*/
 
 
-        });    }
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -32,6 +33,7 @@ class Game extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('Games');
         //
     }
 }

@@ -49,3 +49,7 @@ Route::post("store", "StoreController@store");
 Route::post("joinstore", "StoreController@joinstore");
 
 Route::post("gamestart", "GamePageController@gamestart");
+
+
+Route::get('test',
+		['as' => 'test', 'uses' => 'testcontroller@test']);
