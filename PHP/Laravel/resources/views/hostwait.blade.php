@@ -7,24 +7,6 @@
 
 @section('content')
 
-
-{{--
-use Ratchet\Server\IoServer;
-use Ratchet\Http\HttpServer;
-use Ratchet\WebSocket\WsServer;
-use App\Http\Controllers\HostWaitController;
-
-require 'C:\Bitnami\wampstack-5.6.20-0\apache2\htdocs\schere-stein-papier\PHP\Laravel\vendor\autoload.php';
-
-
-$server = IoServer::factory(
-        new HostWaitController(),
-        8080
-);
-$server->run();
---}}
-
-
         <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container-fluid" style="margin-bottom: 150px;margin-top:-20px;" align="center">
@@ -104,7 +86,10 @@ $server->run();
 
 
                     conn.send(JSON.stringify({command: "message", message: "this is message"}));
+
                     document.location.href="{!! route('gamepage') !!}";
+
+
 
                 };
                 conn.onopen = function(e) {

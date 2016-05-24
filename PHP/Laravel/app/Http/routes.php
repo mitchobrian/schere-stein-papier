@@ -47,3 +47,5 @@ Route::post('contact',
 Route::post("store", "StoreController@store");
 
 Route::post("joinstore", "StoreController@joinstore");
+
+Route::post("gamestart", "GamePageController@gamestart");

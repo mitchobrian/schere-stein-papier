@@ -12,4 +12,10 @@ class GamePageController extends Controller
     {
         return view('gamepage');
     }
+
+    public function gamestart(Request $request) {
+
+        return view('gamepage', $request->websocket);
+
+    }
 }

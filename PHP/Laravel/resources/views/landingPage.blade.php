@@ -70,13 +70,14 @@
        {{-- <label class="sr-only" for="Gamecode">Spielcode</label>
 
         <input type="Gamecode" class="form-control input-lg" id="Gamecode" placeholder="Spielcode" style="width: 400px;">--}}
-
+          <form onsubmit='return checkForm()' action="store" method="post">
 
 
               name<input  type="text" name="name" id="name">
               code<input  type="text" name="code" id="code">
 
-              <input  type="button" name ="erstellen" id="submit" class="btn btn-primary btn-lg" onclick="verbinde()">
+              <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg" onclick="verbinde()">
+          </form>
 
 
 
