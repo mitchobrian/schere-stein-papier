@@ -138,6 +138,14 @@ body{
     height: 200px;
 }
 
+.selected{
+    border: 5px solid #2ca02c;
+}
+
+.mySel{
+    font-size: 40px;
+}
+
 
 span {
     vertical-align: middle;
