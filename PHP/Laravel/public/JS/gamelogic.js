@@ -17,8 +17,6 @@ $(document).ready(function () {
         if (mySelection != null) {
             $('#txtSel').val(mySelection);
         }
-
-        console.log($('.auswahl').length());
     })
 
     //Countdown
