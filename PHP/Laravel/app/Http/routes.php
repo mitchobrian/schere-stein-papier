@@ -33,6 +33,8 @@ Route::get('gamepage',
 
 Route::get('gameend',
 	['as' => 'gameend', 'uses' => 'GameEndController@index']);
+Route::post('gameend',
+	['as' => 'gameend', 'uses' => 'GameEndController@index']);
 
 
 Route::get('hostwait',

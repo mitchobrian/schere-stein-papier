@@ -12,6 +12,12 @@ console.log(mySelection);
 
         //get selection
         $('#getAuswahl').text(mySelection);
+
+        //Set Value of Hidden textfield with selection
+        if (mySelection != null){
+            $('#txtSel').val(mySelection);
+        }
+
     })
 
     //Countdown
@@ -25,8 +31,8 @@ console.log(mySelection);
                 //If nothing selected
 
             }else {
-                //If something selected
-
+                //Submit Form with Choice
+                $('#choiceForm').submit();
             }
         }
     }, 1000);

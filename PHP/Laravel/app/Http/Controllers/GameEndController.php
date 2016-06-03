@@ -8,8 +8,9 @@ use App\Http\Requests;
 
 class GameEndController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('gameend');
+        $choice = $request->get('txtSel');
+        return view('gameend',compact('choice'));
     }
 }
