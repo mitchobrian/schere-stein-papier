@@ -31,11 +31,11 @@
             </div>
             <br><br><br>
             <div id="auswahl-div" style="margin-top:-60px;">
-                <div class="auswahl"><img id="schere" src="images/auswahlIcons/schere/gruen/schere_gruen_links.png"
+                <div class="auswahl"><img id="schere" src="images/auswahlIcons/schere/gif/links_schere_win.gif"
                                           style="margin-top:20px;"></div>
                 <div class="auswahl"><span>VS</span></div>
                 <!-- <div class="auswahl"><span>Stein</span></div> -->
-                <div class="auswahl"><img id="papier_broke" src="images/auswahlIcons/papier/gif/papier_rechts_rot.gif"
+                <div class="auswahl"><img id="papier_broke" src="images/auswahlIcons/papier/gif/papier_rot_lose.gif"
                                           style="margin-top:20px;" img></div>
             </div>
 

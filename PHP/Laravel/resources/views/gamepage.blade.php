@@ -45,11 +45,11 @@
                     <div id="getAuswahl"></div>
                 </div>
             </div>
-        <!--
+        
             {!! Form::open(array('name' => 'choiceForm', 'id' => 'choiceForm','action' => array('GameEndController@index'))) !!}
             <input type="hidden" name="txtSel" id="txtSel">
             {!! Form::close() !!}
-  -->
+
                     <!-- <div class="container" style="text-align:center;" >
 			<button class="btn btn-primary btn-lg">Auswählen</button>
         -->
