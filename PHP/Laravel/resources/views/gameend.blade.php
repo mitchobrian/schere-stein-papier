@@ -41,7 +41,7 @@
 
 
             <!-- Noch mal?-->
-            <div class="container" style="text-align:center;">
+            <div class="container" style="text-align:center;margin-top:-100px;">
                 <div>
                     <h3>Zur Zeit steht es <span id="p1Points">0</span> zu <span id="p2Points">0</span> !</h3>
                     <a class="btn btn-primary btn-lg" href="{{URL::route('gamepage')}}" style="background:Green;"
