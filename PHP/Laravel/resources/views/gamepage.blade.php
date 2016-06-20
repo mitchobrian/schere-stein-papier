@@ -10,8 +10,8 @@
 @section('content')
 
     <div class="jumbotron">
-        <div class="container">
-            <div id="player-outer-div">
+        <div class="container-fluid">
+            <div  id="player-outer-div">
                 <div id="player1-div">Player 1</div>
                 <div id="player2-div">Player 2</div>
             </div>
@@ -30,14 +30,21 @@
 
             <div id="auswahl-div">
 
-                <div class="auswahl"><img src="images/auswahlIcons/schere/schere_links.png" id="Schere"
-                                          style="margin-top:20px;"></div>
-                <div class="auswahl"><img src="images/auswahlIcons/stein/stein_links.png" style="margin-top:20px;"
+	         
+              <div class="hover14 column"> 
+                
+                <div class="auswahl"><img  src="images/auswahlIcons/schere/schere_grau.png" class="img-fluid" id="Schere"
+                                                  style="margin-top:20px;"></div>
+                <div class="auswahl"><img  src="images/auswahlIcons/stein/stein_grau.png" style="margin-top:20px;"
                                           id="Stein"></div>
-                <div class="auswahl"><img src="images/auswahlIcons/papier/papier_links.png" style="margin-top:20px;"
+                <div class="auswahl"><img  src="images/auswahlIcons/papier/papier_grau.png" style="margin-top:20px;"
                                           id="Papier"></div>
+                  
+                 </div>
+
 
                 <div style="text-align: center"><button id="btnRandom" class="btn btn-primary btn-lg">Zufällige Wahl</button> </div>
+
 
                 <div class="mySel"> Deine Auswahl:
                     <div id="getAuswahl"></div>

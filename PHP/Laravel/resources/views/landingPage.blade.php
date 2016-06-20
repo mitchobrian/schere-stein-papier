@@ -9,12 +9,14 @@
     
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container-fluid" style="margin-bottom: 150px;margin-top:-20px;" align="center">  
-        <img src="images/sss_logo_large.png" id="Logo" style="width:900px;height:200px;"> 
+      <div class="container-fluid" style="margin-bottom: 150px;margin-top:-20px;" align="center">
+        <div class="logo-groß"> 
+             <a href=""><img class="img-responsive" src="images/sss_logo_large.png" alt="Movie Places" /></a>
+        </div> 
         <p style="margin-top:50px;">Spiele Schere-Stein-Papier gegen einen Freund! Schaffst du es auf der Rangliste nach ganz oben?</p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
   <hr>
- <br><br>
+ <br><br><br><br><br>
  <!-- ANMELDEFORM -->         
  {{--<div class="container" style="text-align:center;">
   <form class="form-inline" role="form">
