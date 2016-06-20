@@ -3,6 +3,8 @@
 @section('title', 'LandingPage')
 {{ Html::style('css/bootstrap.min.css') }}
 {{ Html::style('css/style.css') }}
+{{ Html::style('css/font-awesome-animation.min.css') }}
+
 
 
 @section('content')
@@ -12,7 +14,7 @@
     <div class="container-fluid" style="margin-bottom: 150px;margin-top:-20px;" align="center">
         <h2 style="margin-top:50px;">PLAYER 1 bitte warte, bis dein Partner das Spiel betritt.</h2>
         <hr>
-        <img src="images/loading.gif" alt="Wartegif" style="height:200px;">
+        <img src="images/arrow.png" class="arrow" alt="Wartegif" >
         <br><br>
         <p class="alert alert-info" id="alert" style="width: 800px;">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
