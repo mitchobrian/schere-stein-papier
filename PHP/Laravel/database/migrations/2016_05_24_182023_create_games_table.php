@@ -14,14 +14,13 @@ class CreateGamesTable extends Migration
     {
         Schema::create('Games', function (Blueprint $table) {
             $table->increments('id');
-            /*$table->integer('user_a_id');
-            $table->foreign('user_a_id');
+            $table->integer('user_a_id');
+            $table->foreign('user_a_name');
             $table->integer('user_a_score');
             $table->integer('user_b_id');
-            $table->foreign('user_b_id');
+            $table->foreign('user_b_name');
             $table->integer('user_b_score');
-            $table->timestamps();*/
-
+            $table->timestamps();
 
         });
     }
