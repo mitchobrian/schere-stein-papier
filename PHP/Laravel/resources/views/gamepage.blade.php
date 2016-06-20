@@ -43,13 +43,6 @@
                  </div>
 
 
-                <div class="auswahl"><img src="images/auswahlIcons/schere/schere_links.png" id="Schere"
-                                          style="margin-top:20px;"></div>
-                <div class="auswahl"><img src="images/auswahlIcons/stein/stein_links.png" style="margin-top:20px;"
-                                          id="Stein"></div>
-                <div class="auswahl"><img src="images/auswahlIcons/papier/papier_links.png" style="margin-top:20px;"
-                                          id="Papier"></div>
-
                 <div style="text-align: center"><button id="btnRandom" class="btn btn-primary btn-lg">Zufällige Wahl</button> </div>
 
 
