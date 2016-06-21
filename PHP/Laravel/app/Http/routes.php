@@ -46,6 +46,7 @@ Route::get('contact',
 Route::post('contact', 
   ['as' => 'contact_store', 'uses' => 'AboutController@store']);
 
+
 Route::post("store", "StoreController@store");
 
 Route::get("hostwaitpolling", "StoreController@hostwaitpolling");

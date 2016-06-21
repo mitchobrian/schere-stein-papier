@@ -114,25 +114,53 @@ class StoreController extends Controller
 
     public function hostwaitpolling()
     {
-        $endtime = time() + 3;
 
         $gamecode = $this->fetch('gamecode');
         $host_id = $this->fetch('host_id');
 
-        $users = Users::all();
+
+      /*  $users = Users::all();
+
+
 
         foreach ($users as $user) {
-            if ($user->id == $host_id) {
+            $result = strcmp($user->id, $host_id);
+            if ($result == 0) {
                 $this->output(true, $user->id);
             }
         }
-        $this->output(false, $user->id);
+        $this->output(false, $users);*/
+
+        /*$results = DB::table('Users')->select('*')
+            ->where('gamecode', 'LIKE', $gamecode)
+            ->get();
+
+        if($results) {
+            $this->output(true, $results->id);
+
+        }
+        else {
+            $this->output(false, $results);
+
+        }*/
+
+
+
+        $results = DB::select( DB::raw("SELECT * FROM Users WHERE gamecode LIKE '$gamecode' AND id NOT LIKE $host_id") );
+        if($results) {
+            $this->output(true, $gamecode);
+
+        }
+        else {
+            $this->output(false, $gamecode);
+
+        }
 
     }
 
     protected function fetch($name)
     {
-        $val = isset($_POST[$name]) ? $_POST[$name] : '';
+        $val = isset($_GET[$name]) ? $_GET[$name] : '';
         return $val;
     }
 

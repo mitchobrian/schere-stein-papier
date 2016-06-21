@@ -79,7 +79,7 @@
                 this.getMessage = function(){
                     var t = this;
                     var latest = null;
-                    var gamec = "{{$users->gamecode}}";
+
 
                     $.ajax({
                         'url': 'hostwaitpolling',
@@ -88,7 +88,7 @@
 
                         'data': {
                             'mode': 'post',
-                            'gamecode': gamec,
+                            'gamecode': "{{$users->gamecode}}",
                             'host_id': '{{$users->id}}',
                         },
                         'timeout': 300000,
