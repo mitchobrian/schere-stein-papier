@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
 
             $table->string('username', 200);
+            $table->string('gamecode', 20);
             $table->timestamps();
         });
         //

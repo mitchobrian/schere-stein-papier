@@ -48,6 +48,8 @@ Route::post('contact',
 
 Route::post("store", "StoreController@store");
 
+Route::get("hostwaitpolling", "StoreController@hostwaitpolling");
+
 Route::post("joinstore", "StoreController@joinstore");
 
 Route::post("gamestart", "GamePageController@gamestart");

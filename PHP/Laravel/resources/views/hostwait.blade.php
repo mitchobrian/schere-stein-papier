@@ -24,7 +24,7 @@
 
         <div class="input-group">
             <br>
-            <input type="text" class="form-control input-lg txtGameCode"  id="gamecode" placeholder="CODE" value=""
+            <input type="text" class="form-control input-lg txtGameCode"  id="gamecode" placeholder="CODE" value="{{$users->gamecode}}"
                    style="text-align:center;width: 300px;">
             <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
         </div>
@@ -42,7 +42,7 @@
             //Generate Gamecode
 
                 window.addEventListener('load', function () {
-                var gamecode = document.querySelector('.txtGameCode');
+               /* var gamecode = document.querySelector('.txtGameCode');
 
                 var text = "";
                 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -50,7 +50,8 @@
                 for (var i = 0; i < 6; i++)
                     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-                gamecode.value = text;
+                gamecode.value = text;*/
+
             });
 
 
@@ -74,41 +75,68 @@
                 }, 1000);
             }
 
-            function socketfunk() {
+            function Chatter(){
+                this.getMessage = function(){
+                    var t = this;
+                    var latest = null;
+                    var gamec = "{{$users->gamecode}}";
 
+                    $.ajax({
+                        'url': 'hostwaitpolling',
+                        'type': 'get',
+                        'dataType': 'json',
 
-
-                var conn = new WebSocket('ws://127.0.0.1:8080');
-
-                var chanelname = document.getElementById("gamecode").value;
-
-
-
-                conn.onmessage = function(e) {
-
-
-                    conn.send(JSON.stringify({command: "message", message: "this is message"}));
-
-                    document.location.href="{!! route('gamepage') !!}";
-
-
-
+                        'data': {
+                            'mode': 'post',
+                            'gamecode': gamec,
+                            'host_id': '{{$users->id}}',
+                        },
+                        'timeout': 300000,
+                        'cache': false,
+                        'success': function(result){
+                            if(result.result){
+                                alert("geklappt");
+                                callback(result.message);
+                                latest = result.latest;
+                            }
+                        },
+                        'error': function(e){
+                            console.log(e);
+                        },
+                        'complete': function(){
+                            t.getMessage();
+                        }
+                    });
                 };
-                conn.onopen = function(e) {
-                    console.log("Connection established!");
-                    conn.send(JSON.stringify({command: "subscribe", channel: chanelname}));
-                    console.log(chanelname);
-                };
 
 
-                console.log("Ausgeführt");
-            }
+            };
+
+            var c = new Chatter();
+
+
+
 
             window.onload = function () {
                 var fifteenMinutes = 60 * 15,
                         display = document.querySelector('#time');
-                socketfunk();
                 startTimer(fifteenMinutes, display);
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                c.getMessage(function(message){
+
+
+
+
+
+                });
+
+
 
 
 

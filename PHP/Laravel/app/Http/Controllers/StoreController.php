@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\users;
 use App\games;
+use DB;
 
 use Illuminate\Http\Request;
 
@@ -47,20 +48,23 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        $users = new Users;
-        $users->username = input::get("name");
-        $users->save();
 
 
-       /* $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < 10; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
 
+        $users = new Users;
+        $users->username = input::get("name");
+        $users->gamecode = $randomString;
+        $users->save();
+
         //Abfragen ob es den Code schon gibt!!!!
-        //extra Tabelle gamecode???*/
+        //extra Tabelle gamecode???
 
 
 
@@ -72,63 +76,75 @@ class StoreController extends Controller
     public function joinstore(Request $request)
     {
 
-        //code vergleichen input::get("code");
+        $gamecode = input::get("code");
 
-        $users = new Users;
-        $users->username = input::get("name");
-        $users->save();
+        $id = input::get("id");
+        $users = null;
+        $users = DB::table('users')
+            ->select(DB::raw('*'))
+            ->where('gamecode', 'LIKE', $gamecode)
+            ->get();
 
-        $code = input::get("code");
+        if($users) {
+
+            $joinusers = new Users;
+            $joinusers->username = input::get("name");
+            $joinusers->gamecode = $gamecode;
+            $joinusers->save();
 
 
 
 
-        return view('gamepage', compact('code'));
+
+
+            return "erstellt";
+        } else {
+            return $users;
+        }
+
+
+
+
+
+
+
+        //return view('gamepage', compact('code'));
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function hostwaitpolling()
     {
-        //
+        $endtime = time() + 3;
+
+        $gamecode = $this->fetch('gamecode');
+        $host_id = $this->fetch('host_id');
+
+        $users = Users::all();
+
+        foreach ($users as $user) {
+            if ($user->id == $host_id) {
+                $this->output(true, $user->id);
+            }
+        }
+        $this->output(false, $user->id);
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    protected function fetch($name)
     {
-        //
+        $val = isset($_POST[$name]) ? $_POST[$name] : '';
+        return $val;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    protected function output($result, $output, $message = null, $latest = null)
     {
-        //
+        echo json_encode(array(
+            'result' => $result,
+            'message' => $message,
+            'output' => $output,
+            'latest' => $latest
+        ));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
 }

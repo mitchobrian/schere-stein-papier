@@ -72,13 +72,14 @@
        {{-- <label class="sr-only" for="Gamecode">Spielcode</label>
 
         <input type="Gamecode" class="form-control input-lg" id="Gamecode" placeholder="Spielcode" style="width: 400px;">--}}
-          <form onsubmit='return checkForm()' action="store" method="post">
+          <form action="joinstore" method="post">
 
 
               name<input  type="text" name="name" id="name">
               code<input  type="text" name="code" id="code">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-              <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg" onclick="verbinde()">
+              <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg" >
           </form>
 
 
@@ -99,22 +100,26 @@
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
 
-    function verbinde() {
-        var conn = new WebSocket('ws://127.0.0.1:8080');
+    window.onload = function () {
 
-        var chanelname = document.getElementById('code').value;
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
-        conn.onmessage = function(e) {
-            document.location.href="{!! route('gamepage') !!}";
-        };
-        conn.onopen = function(e) {
-            console.log("Connection established!");
-            conn.send(JSON.stringify({command: "subscribe", channel: chanelname}));
-            conn.send(JSON.stringify({command: "message", message: "this is message"}));
-        };
-    }
+
+
+
+
+
+
+
+
+    };
+
 </script>
 
 

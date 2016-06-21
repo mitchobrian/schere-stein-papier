@@ -22,6 +22,7 @@ class CreateGamesTable extends Migration
             $table->integer('user_b_score');
             $table->timestamps();
 
+
         });
     }
 
