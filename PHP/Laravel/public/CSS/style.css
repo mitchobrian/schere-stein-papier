@@ -28,25 +28,56 @@ body{
     height: auto;
 }
 
-/**
+@media (min-width:374px) and (max-width: 399px) {
+    .jumbotron{height:200%;}
+    #schere{height:50%;width:50%;margin-left:-20%;}
+    #papier_broke{height:50%;width:50%;margin-left:-20%;padding:50%;}
+    #vs{font-size:50%;width:-20%;margin-left:350%;margin-top:-720%;}
+    #player1-div{margin-left:-8%;}
+    #player2-div{margin-left:-15%; margin-top:14%;}
+    #spielauswertung{font-size:200%;margin-top:-70%;}
+    #player-outer-div{font-size:10px;}
+    #player1id{font-size:60%;}
+    #player2id{font-size:60%;}
+    #nochmal{margin-top:-200%;}
 
-@media (min-width:0px) and (max-width: 767px) {
-    .player-outer-div{font-size:50px;
+}
+
+
+@media (min-width:400px) and (max-width: 599px) {
+    #schere{height:10%;width:60%;margin-left:5%;}
+    #papier_broke{height:60%;width:%;margin-left:-40%;}
+    #vs{font-size:110%;margin-left:-190%;margin-top:-50%;}
+    #player2-div{font-size:10px;margin-left:-12%;}
+    #spielauswertung{font-size:400%;}
+}
+
+
+
+
+@media (min-width:600px) and (max-width: 767px) {
+    .jumbotron{height:80%;width:97%;}
+    #schere{height:70%;width:70%;margin-left:30%;}
+    #papier_broke{height:70%;width:70%;margin-left:-20%;}
+    #vs{font-size:70%;margin-left:-120%;margin-top:-50%;}
+    #player2-div{margin-left:-16%;}
+    #spielauswertung{font-size:400%;}
     
-    }
 }
 
 
 @media (min-width: 768px) and (max-width: 991px) {
-      .player-outer-div{font-size:30px;
-               
-    }
+    #schere{height:60%;width:60%;margin-left:5%;}
+    #papier_broke{height:60%;width:60%;margin-left:-40%;}
+    #vs{font-size:110%;margin-left:-210%;margin-top:-50%;}
+    #player2-div{margin-left:-15%;}
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-      .player-outer-div{font-size:50px;                   
+      #schere{height:90%;width:90%; 
+      
     }
-
+    #papier_broke{height:90%;width:90%;}
 }
 
 
@@ -65,7 +96,7 @@ body{
     }
 }
 
-**/
+
 
 
 .arrow {

@@ -18,7 +18,7 @@
             </div> 
         
             <p id="rundeundspielauswertung" style="margin-top:-20%;">
-            <h1 align="center">Spielauswertung!</h1>
+            <h1 align="center" id="spielauswertung">Spielauswertung!</h1>
             </p>
 
 
@@ -34,7 +34,7 @@
             <br><br><br>
          
         
-            <div id="auswahl-div" style="margin-top:-60px;">
+            <div id="auswahl-div" style="margin-top:-8%;">
 
               
                 <div class="auswahl"><img id="schere" class="img-responsive" src="images/auswahlIcons/schere/gif/links_schere_win.gif" 
