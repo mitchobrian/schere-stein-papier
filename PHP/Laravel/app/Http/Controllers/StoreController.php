@@ -89,31 +89,41 @@ class StoreController extends Controller
         $users = DB::table('users')->select('username', 'id', 'gamecode')->where('gamecode', $gamecode)->first();
 
         if ($users) {
-            //Erstellt Datensatz User in Users Tabelle
-            $joinusers = new Users;
-            $joinusers->username = input::get("name");
-            $joinusers->gamecode = $gamecode;
-            $joinusers->save();
 
-            //Erstellt Datensatz Game in Games Tabelle
-            $newgame = new Games;
+            $checkgame = DB::table('games')->select('gamecode')->where('gamecode', $gamecode)->first();
 
-            $newgame->gamecode = input::get("code");
+            if (!$checkgame) {
+
+                //Erstellt Datensatz User in Users Tabelle
+                $joinusers = new Users;
+                $joinusers->username = input::get("name");
+                $joinusers->gamecode = $gamecode;
+                $joinusers->save();
+
+                //Erstellt Datensatz Game in Games Tabelle
+                $newgame = new Games;
+
+                $newgame->gamecode = input::get("code");
 
 
-            $newgame->user_a_id = $users->id;  // DAS KLAPPT NICHT
+                $newgame->user_a_id = $users->id;  // DAS KLAPPT NICHT
 
-            $newgame->user_b_id = $joinusers->id;
-            $newgame->user_b_name = $joinusers->username;
-            $newgame->save();
+                $newgame->user_b_id = $joinusers->id;
+                $newgame->user_b_name = $joinusers->username;
+                $newgame->save();
 
-            Session::flush();
+                Session::flush();
 
-            Session::put('username', $users->username);
-            Session::put('id', $users->id);
-            Session::put('gamecode', $users->gamecode);
+                Session::put('username', $users->username);
+                Session::put('id', $users->id);
+                Session::put('gamecode', $users->gamecode);
 
-            return view("gamepage", compact('newgame'));
+                return view("gamepage", compact('newgame'));
+            }
+            else {
+                return "Spiel gibt es schon";
+            }
+
         } else {
             return "gamecode existiert nicht";
         }
