@@ -13,6 +13,7 @@ use App\Http\Requests;
 
 use Illuminate\Support\Facades\Input;
 
+use Illuminate\Support\Facades\Session;
 use Ratchet\Server\IoServer;
 use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
@@ -43,12 +44,11 @@ class StoreController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-
 
 
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -63,9 +63,16 @@ class StoreController extends Controller
         $users->gamecode = $randomString;
         $users->save();
 
+        Session::flush();
+
+        Session::put('username', $users->username);
+        Session::put('id', $users->id);
+        Session::put('gamecode', $users->gamecode);
+
+
+
         //Abfragen ob es den Code schon gibt!!!!
         //extra Tabelle gamecode???
-
 
 
         return view('hostwait', compact('users'));
@@ -77,39 +84,39 @@ class StoreController extends Controller
     {
 
         $gamecode = input::get("code");
-
-        $id = input::get("id");
         $users = null;
-        $users = DB::table('users')
-            ->select(DB::raw('*'))
-            ->where('gamecode', 'LIKE', $gamecode)
-            ->get();
 
-        if($users) {
+        $users = DB::table('users')->select('username', 'id', 'gamecode')->where('gamecode', $gamecode)->first();
 
+        if ($users) {
+            //Erstellt Datensatz User in Users Tabelle
             $joinusers = new Users;
             $joinusers->username = input::get("name");
             $joinusers->gamecode = $gamecode;
             $joinusers->save();
 
+            //Erstellt Datensatz Game in Games Tabelle
+            $newgame = new Games;
+
+            $newgame->gamecode = input::get("code");
 
 
+            $newgame->user_a_id = $users->id;  // DAS KLAPPT NICHT
 
+            $newgame->user_b_id = $joinusers->id;
+            $newgame->user_b_name = $joinusers->username;
+            $newgame->save();
 
+            Session::flush();
 
-            return "erstellt";
+            Session::put('username', $users->username);
+            Session::put('id', $users->id);
+            Session::put('gamecode', $users->gamecode);
+
+            return view("gamepage", compact('newgame'));
         } else {
-            return $users;
+            return "gamecode existiert nicht";
         }
-
-
-
-
-
-
-
-        //return view('gamepage', compact('code'));
-
     }
 
     public function hostwaitpolling()
@@ -119,17 +126,17 @@ class StoreController extends Controller
         $host_id = $this->fetch('host_id');
 
 
-      /*  $users = Users::all();
+        /*  $users = Users::all();
 
 
 
-        foreach ($users as $user) {
-            $result = strcmp($user->id, $host_id);
-            if ($result == 0) {
-                $this->output(true, $user->id);
-            }
-        }
-        $this->output(false, $users);*/
+          foreach ($users as $user) {
+              $result = strcmp($user->id, $host_id);
+              if ($result == 0) {
+                  $this->output(true, $user->id);
+              }
+          }
+          $this->output(false, $users);*/
 
         /*$results = DB::table('Users')->select('*')
             ->where('gamecode', 'LIKE', $gamecode)
@@ -145,13 +152,11 @@ class StoreController extends Controller
         }*/
 
 
-
-        $results = DB::select( DB::raw("SELECT * FROM Users WHERE gamecode LIKE '$gamecode' AND id NOT LIKE $host_id") );
-        if($results) {
+        $results = DB::select(DB::raw("SELECT * FROM Users WHERE gamecode LIKE '$gamecode' AND id NOT LIKE $host_id"));
+        if ($results) {
             $this->output(true, $gamecode);
 
-        }
-        else {
+        } else {
             $this->output(false, $gamecode);
 
         }
