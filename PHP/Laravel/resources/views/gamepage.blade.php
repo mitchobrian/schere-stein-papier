@@ -10,11 +10,16 @@
 @section('content')
 
     <div class="jumbotron">
-        <div class="container-fluid">
+        <div class="row">
             <div  id="player-outer-div">
-                <div id="player1-div">Player 1</div>
-                <div id="player2-div">Player 2</div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <h2>Player1</h2>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <h2>Player2</h2>
+                </div>
             </div>
+        </div>
 
             <p id="rundeundspielauswertung">
             <h1 align="center">Runde X</h1>

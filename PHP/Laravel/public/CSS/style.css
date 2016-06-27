@@ -28,6 +28,12 @@ body{
     height: auto;
 }
 
+
+
+
+/**
+
+
 @media (min-width:374px) and (max-width: 399px) {
     .jumbotron{height:200%;}
     #schere{height:50%;width:50%;margin-left:-20%;}
@@ -97,6 +103,7 @@ body{
 }
 
 
+**/
 
 
 .arrow {
@@ -146,32 +153,11 @@ body{
 
 #player-outer-div {
     height: 300px;
-    width: 100%;
+    
     
 }
 
-#player1-div {
-    font-size: 50px;
-    position: relative;
-    left: 2%;
-    width: 200px;
-}
 
-#player2-div {
-    font-size: 50px;
-    position: relative;
-    right: -80%;
-    top: -24%;
-    width: 200px;
-}
-
-#auswahl-div {
-    display: table;
-    align-content: center;
-    text-align: center;
-    margin: auto;
-    vertical-align: middle;
-}
 
 #rundeundspielauswertung{
     margin-top: -50px;
@@ -182,13 +168,6 @@ body{
     margin-top: 100px;
 }
 
-.auswahl {
-    font-size: 40px;
-    float: left;
-    margin: 25px;
-    width: auto;
-    height: auto;
-}
 
 
 .selected{
@@ -207,11 +186,6 @@ span {
     
 }
 
-#vs{
-    vertical-align: middle;
-    display: inline-block;
-    line-height: 200px;  
-}
 
 /*button {
     position: relative;
