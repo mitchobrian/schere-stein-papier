@@ -1,25 +1,24 @@
-body{
+body {
     background-image: url(../images/bg2.png);
-    background-size:cover;
-    background-repeat:no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .jumbotron {
     background-image: url(../images/jumbo2.jpg);
-    background-size:cover;
-    background-repeat:no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     overflow: hidden;
-    padding:1px;
-    border:7px solid black;
-    
-    
+    padding: 1px;
+    border: 7px solid black;
+    text-align: center;
 }
 
 .logo-groß {
     z-index: 3;
     top: 4px;
     left: 20%;
-    margin-top:40px;
+    margin-top: 40px;
 }
 
 .logo-groß img {
@@ -28,7 +27,13 @@ body{
     height: auto;
 }
 
+.row-centered {
+    vertical-align: middle;
+}
 
+.img-responsive {
+    margin: 0 auto;
+}
 
 
 /**
@@ -105,23 +110,22 @@ body{
 
 **/
 
-
 .arrow {
-  animation: arrow 2.5s linear infinite;
-  transform-origin: 50% 50%;
+    animation: arrow 2.5s linear infinite;
+    transform-origin: 50% 50%;
 }
 
 @keyframes arrow {
-  0% { transform:rotate(0deg) }
-  60% { transform:rotate(359deg) }
-  100% { transform:rotate(359deg) }
+    0% {
+        transform: rotate(0deg)
+    }
+    60% {
+        transform: rotate(359deg)
+    }
+    100% {
+        transform: rotate(359deg)
+    }
 }
-
-
-
-
-
-
 
 .navbar-brand>img {
     height: 220%;
@@ -130,10 +134,9 @@ body{
     margin-top: -12px;
 }
 
-.social-network{
+.social-network {
     margin-top: 145px;
 }
-
 
 #Logo {
     width: 20px;
@@ -150,40 +153,31 @@ body{
     font-size: 14pt;
 }
 
-
 #player-outer-div {
     height: 300px;
-    
-    
 }
 
-
-
-#rundeundspielauswertung{
-    margin-top: -50px;
+#rundeundspielauswertung {
+    margin-top: -180px;
 }
 
 #wählenundauswertung-div {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
-
-
-.selected{
+.selected {
     border: 5px solid #2ca02c;
 }
 
-.mySel{
-    font-size: 40px;
+.mySel {
+    font-size: 30px;
 }
-
 
 span {
     vertical-align: middle;
     display: inline-block;
     line-height: 200px;
-    
 }
 
 
@@ -193,5 +187,3 @@ span {
     height:50px;
     width:100px;
 }*/
-
-

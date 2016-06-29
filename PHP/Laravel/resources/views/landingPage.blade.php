@@ -16,7 +16,7 @@
         <p style="margin-top:50px;">Spiele Schere-Stein-Papier gegen einen Freund! Schaffst du es auf der Rangliste nach ganz oben?</p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
   <hr>
- <br><br><br><br><br>
+ <br>
  <!-- ANMELDEFORM -->         
  {{--<div class="container" style="text-align:center;">
   <form class="form-inline" role="form">
