@@ -37,6 +37,8 @@
             <img src="images/twitter.png" style="height: 70px;">
 
         </div>
+        <form action="gamestart" method="get" id="hostsubmit" name="hostsubmit">
+        </form>
 
       <script>
             //Generate Gamecode
@@ -91,13 +93,14 @@
                             'gamecode': "{{$users->gamecode}}",
                             'host_id': '{{$users->id}}',
                         },
-                        'timeout': 300000,
+                        'timeout': 3000000,
                         'cache': false,
                         'success': function(result){
                             if(result.result){
-                                alert("geklappt");
+                                $('#hostsubmit').submit();
                                 callback(result.message);
                                 latest = result.latest;
+
                             }
                         },
                         'error': function(e){
@@ -118,15 +121,14 @@
 
 
             window.onload = function () {
+
+
+
                 var fifteenMinutes = 60 * 15,
                         display = document.querySelector('#time');
                 startTimer(fifteenMinutes, display);
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
+
 
                 c.getMessage(function(message){
 

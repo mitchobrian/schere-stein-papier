@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\users;
 use App\games;
 use DB;
+use App\match;
 
 use Illuminate\Http\Request;
 
@@ -68,6 +69,7 @@ class StoreController extends Controller
         Session::put('username', $users->username);
         Session::put('id', $users->id);
         Session::put('gamecode', $users->gamecode);
+        Session::put('ishost', '1');
 
 
 
@@ -90,7 +92,10 @@ class StoreController extends Controller
 
         if ($users) {
 
-            $checkgame = DB::table('games')->select('gamecode')->where('gamecode', $gamecode)->first();
+            $checkgame = DB::table('games')
+                ->select('gamecode')
+                ->where('gamecode', $gamecode)
+                ->first();
 
             if (!$checkgame) {
 
@@ -102,21 +107,20 @@ class StoreController extends Controller
 
                 //Erstellt Datensatz Game in Games Tabelle
                 $newgame = new Games;
-
                 $newgame->gamecode = input::get("code");
-
-
                 $newgame->user_a_id = $users->id;  // DAS KLAPPT NICHT
-
                 $newgame->user_b_id = $joinusers->id;
                 $newgame->user_b_name = $joinusers->username;
                 $newgame->save();
 
+                //Session Daten löschen
                 Session::flush();
 
+                //User Daten neu in die Session einfügen
                 Session::put('username', $users->username);
                 Session::put('id', $users->id);
                 Session::put('gamecode', $users->gamecode);
+                Session::put('ishost', '0');
 
                 return view("gamepage", compact('newgame'));
             }
@@ -131,47 +135,102 @@ class StoreController extends Controller
 
     public function hostwaitpolling()
     {
-
+        sleep(1);
         $gamecode = $this->fetch('gamecode');
         $host_id = $this->fetch('host_id');
+        $results = DB::table('Users')
+            ->select('gamecode', 'id')
+            ->where('gamecode', $gamecode)
+            ->where('id', 'not like', $host_id)
+            ->first();
+        if ($results) {
+            $this->output(true, $gamecode);
+        } else {
+            $this->output(false, $gamecode);
+        }
+    }
 
+    public function hostgamepage(Request $request) {
+        return view('gamepage');
+    }
+    
+    public function insertselection() {
+        
+        $selection = $this->fetch('selection');
+        var_dump($selection);
 
-        /*  $users = Users::all();
+        $result = DB::table('match')
+            ->select('gamecode')
+            ->where('gamecode', Session::get('gamecode'))
+            ->first();
+        if($result) {
+            if(Session::get('ishost') == '1') {
+                DB::table('match')
+                    ->where('gamecode', Session::get('gamecode'))
+                    ->where('winner', '<', 0)
+                    ->update(array('user_a_id' => Session::get('id')))
+                    ->update(array('user_a_name' => Session::get('username')))
+                    ->update(array('user_a_decision' => $selection));
+            }
+            else {
+                DB::table('match')
+                    ->where('gamecode', Session::get('gamecode'))
+                    ->where('winner', '<', 0)
+                    ->update(array('user_b_id' => Session::get('id')))
+                    ->update(array('user_b_name' => Session::get('username')))
+                    ->update(array('user_b_decision' => $selection));
+            }
+        }
+        else {
+            $match = new match();
+            $match->gamecode = Session::get('gamecode');
 
+            if(Session::get('ishost') == '1') {
 
+                $match->user_a_id = Session::get('id');
+                $match->user_a_name = Session::get('username');
+                $match->user_a_decision = $selection;
 
-          foreach ($users as $user) {
-              $result = strcmp($user->id, $host_id);
-              if ($result == 0) {
-                  $this->output(true, $user->id);
-              }
-          }
-          $this->output(false, $users);*/
+            }
+            else {
+                $match->user_b_id = Session::get('id');
+                $match->user_b_name = Session::get('username');
+                $match->user_b_decision = $selection;
+            }
+            $match->save();
+        }
+        return view('gamepage');
+    }
 
-        /*$results = DB::table('Users')->select('*')
-            ->where('gamecode', 'LIKE', $gamecode)
-            ->get();
+    public function gamepolling() {
 
-        if($results) {
-            $this->output(true, $results->id);
+        if(Session::get('ishost') == '1') {
+            $results = DB::table('match')
+                ->select('user_b_decision', 'gamecode', 'winner')
+                ->where('winner', '<', 0)
+                ->where('gamecode', session::get('gamecode'))
+                ->where('user_b_decision', 'not like', "0")
+                ->first();
 
         }
         else {
-            $this->output(false, $results);
-
-        }*/
-
-
-        $results = DB::select(DB::raw("SELECT * FROM Users WHERE gamecode LIKE '$gamecode' AND id NOT LIKE $host_id"));
-        if ($results) {
-            $this->output(true, $gamecode);
-
-        } else {
-            $this->output(false, $gamecode);
+            $results = DB::table('match')
+                ->select('user_a_decision', 'gamecode', 'winner')
+                ->where('winner', '<', 0)
+                ->where('gamecode', session::get('gamecode'))
+                ->where('user_a_decision', 'not like', "0")
+                ->first();
 
         }
 
+        if ($results) {
+            $this->output(true, "ja");
+        } else {
+            $this->output(false, "nein");
+        }
+        
     }
+
 
     protected function fetch($name)
     {

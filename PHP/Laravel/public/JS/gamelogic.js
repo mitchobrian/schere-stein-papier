@@ -1,11 +1,18 @@
 $(document).ready(function () {
+
+
+
+    
+    console.log("anfaG");
     $('#hurry').hide();
 
     var mySelection
+    console.log("anfaG");
 
 
     //Make selection
     $('#auswahl-div img').on('click', function (e) {
+        console.log("gewählt");
         e.preventDefault();
         $('#auswahl-div img').removeClass('selected');
         $(this).addClass('selected');
@@ -19,6 +26,11 @@ $(document).ready(function () {
         if (mySelection != null) {
             $('#txtSel').val(mySelection);
         }
+console.log("vor deci methode");
+        insertdecision(mySelection);
+        c.getMessage(function(message){});
+    
+        
     })
 
     $('#btnRandom').on('click', function (e) {
@@ -38,7 +50,7 @@ $(document).ready(function () {
     })
 
     //Countdown
-    var seconds = 30;
+    var seconds = 300;
     $("#time").html(seconds);
     setInterval(function () {
         seconds--;
@@ -77,3 +89,54 @@ $(document).ready(function () {
     }, 1000);
 
 });
+
+function Chatter(){
+    this.getMessage = function(){
+        var t = this;
+        var latest = null;
+
+
+        $.ajax({
+            'url': 'gamepolling',
+            'type': 'get',
+            'dataType': 'json',
+
+            'data': {
+                'mode': 'post',
+            },
+            'timeout': 3000000,
+            'cache': false,
+            'success': function(result){
+                if(result.result){
+                    $('#choiceForm').submit();
+                    callback(result.message);
+                    latest = result.latest;
+
+                }
+            },
+            'error': function(e){
+                console.log(e);
+            },
+            'complete': function(){
+                t.getMessage();
+            }
+        });
+    };
+
+
+};
+
+var c = new Chatter();
+
+function insertdecision(selection) {
+    console.log("vor ajax");
+    $.ajax({
+        'url': 'insertselection',
+        'type': 'get',
+        'dataType': 'json',
+        'data': {
+            'selection': selection,
+        }
+    });
+
+}

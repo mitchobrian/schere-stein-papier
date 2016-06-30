@@ -27,8 +27,11 @@ Route::get('landingPage',
 	['as' => 'landingPage', 'uses' => 'LandingPageController@index']);
 
 
-Route::get('gamepage',
-	['as' => 'gamepage', 'uses' => 'GamePageController@index']);
+Route::get('gamestart',
+	['as' => 'gamestart', 'uses' => 'GamePageController@index']);
+
+Route::post('gamestart',
+	['as' => 'gamestart', 'uses' => 'GamePageController@index']);
 
 
 Route::get('gameend',
@@ -53,7 +56,13 @@ Route::get("hostwaitpolling", "StoreController@hostwaitpolling");
 
 Route::post("joinstore", "StoreController@joinstore");
 
+Route::post("hostgamepage", "StoreController@hostgamepage");
+
 Route::post("gamestart", "GamePageController@gamestart");
+
+Route::get("insertselection", "StoreController@insertselection");
+
+Route::get("gamepolling", "StoreController@gamepolling");
 
 
 Route::get('test',

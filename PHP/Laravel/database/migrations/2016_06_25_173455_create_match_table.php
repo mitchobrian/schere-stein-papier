@@ -16,18 +16,18 @@ class CreateMatchTable extends Migration
 
             $table->increments('id');
 
-            $table->string('gamecode');
+            $table->string('gamecode')->default("0");;
 
 
-            $table->integer('user_a_id');
-            $table->string('user_a_name');
-            $table->integer('user_a_decision');
+            $table->integer('user_a_id')->default(0);
+            $table->string('user_a_name')->default("0");;
+            $table->string('user_a_decision')->default("0");;
 
-            $table->integer('user_b_id');
-            $table->string('user_b_name');
-            $table->integer('user_b_decision');
+            $table->integer('user_b_id')->default(0);;
+            $table->string('user_b_name')->default("0");;
+            $table->string('user_b_decision')->default("0");;
 
-            $table->integer('winner');
+            $table->integer('winner')->default(0);;
 
             $table->timestamps();
         });

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<>
     <title>Schnick Schnack Schnuck - @yield('title')</title>
 
     <meta charset="utf-8">
@@ -12,7 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<link href="CSS/style.css" rel="stylesheet">
-</head>
 
 <body>   
     
