@@ -27,12 +27,6 @@ Route::get('landingPage',
 	['as' => 'landingPage', 'uses' => 'LandingPageController@index']);
 
 
-Route::get('gamestart',
-	['as' => 'gamestart', 'uses' => 'GamePageController@index']);
-
-Route::post('gamestart',
-	['as' => 'gamestart', 'uses' => 'GamePageController@index']);
-
 
 Route::get('gameend',
 	['as' => 'gameend', 'uses' => 'GameEndController@index']);

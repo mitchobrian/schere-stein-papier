@@ -5,14 +5,13 @@ $(document).ready(function () {
     var p1Counter = 0;
     var p2Counter = 0;
 
-    var p1Choice = $('#p1Choice').val();
 
-    //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!
+   /* //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!
     var randomChoice = Array("Schere", "Stein", "Papier");
     var p2Choice = randomChoice[Math.floor(randomChoice.length * Math.random())];
     console.log(p1Choice + " " + p1Points);
     console.log(p2Choice + " " + p2Points);
-    //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!
+    //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!*/
 
 
     //Hide all Symboles

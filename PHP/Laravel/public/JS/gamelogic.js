@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 
     
-    console.log("anfaG");
+    console.log(id);
     $('#hurry').hide();
 
     var mySelection
@@ -103,12 +103,13 @@ function Chatter(){
 
             'data': {
                 'mode': 'post',
+                'userid': id
             },
             'timeout': 3000000,
             'cache': false,
             'success': function(result){
                 if(result.result){
-                    $('#choiceForm').submit();
+                    $('#gameend').submit();
                     callback(result.message);
                     latest = result.latest;
 
@@ -136,6 +137,7 @@ function insertdecision(selection) {
         'dataType': 'json',
         'data': {
             'selection': selection,
+            'userid': id
         }
     });
 

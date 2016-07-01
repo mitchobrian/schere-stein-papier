@@ -50,9 +50,10 @@
         <div id="getAuswahl"></div>
     </div>
 </div>
-{!! Form::open(array('name' => 'choiceForm', 'id' => 'choiceForm','action' => array('GameEndController@index'))) !!}
-<input type="hidden" name="txtSel" id="txtSel"> {!! Form::close() !!}
-
+<form action="gameend" method="post" id="gameend" name="gameend">
+    <input type="hidden" name="id" id="id" value="{{$id}}">
+    <input type="hidden" name="_token" value="{{ csrf_token()}}">
+</form>
 <!-- <div class="container" style="text-align:center;" >
 			<button class="btn btn-primary btn-lg">Auswählen</button>
         -->
@@ -60,6 +61,13 @@
 </div>
 </div>
 <script>
+
+    console.log('{{$id}}');
+    var id = '{{$id}}';
+
+
+
+
     var gameEnd = "{{ route('gameend')}}";
 
 </script>

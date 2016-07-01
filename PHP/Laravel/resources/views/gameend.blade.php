@@ -65,7 +65,7 @@
             <div class="container" style="text-align:center;margin-top:-3%;">
                 <div>
                     <h3>Zur Zeit steht es <span id="p1Points">0</span> zu <span id="p2Points">0</span> !</h3>
-                    <a class="btn btn-primary btn-lg" href="{{URL::route('gamepage')}}"
+                    <a class="btn btn-primary btn-lg" href="/"
                        style="background:Green;"
                        role="button">Nochmal?</a>
                     <br><br>
@@ -73,6 +73,15 @@
             </div>
         </div>
     </div>
+
+        <script>
+            var p2Choice = '{{$p2choice}}';
+            var p1Choice = '{{$choice}}';
+
+            console.log(p2Choice);
+            console.log('{{$choice}}')
+
+        </script>
 
 
     <!-- Bootstrap core JavaScript
