@@ -11,12 +11,12 @@
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-    <div class="container-fluid" style="margin-bottom: 150px;margin-top:-20px;" align="center">
+    <div class="container-fluid" style="margin-bottom: 30px;margin-top:-20px;" align="center">
         <h2 style="margin-top:50px;">PLAYER 1 bitte warte, bis dein Partner das Spiel betritt.</h2>
         <hr>
         <img src="images/arrow.png" class="arrow" alt="Wartegif" >
         <br><br>
-        <p class="alert alert-info" id="alert" style="width: 800px;">
+        <p class="alert alert-info" id="alert" style="width: 100%;">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
             <span class="sr-only">Info:</span>
             <strong id="time">15:00</strong> <strong>Verschicke diesen Link an einen Freund!</strong>
@@ -25,18 +25,18 @@
         <div class="input-group">
             <br>
             <input type="text" class="form-control input-lg txtGameCode"  id="gamecode" placeholder="CODE" value="{{$users->gamecode}}"
-                   style="text-align:center;width: 300px;">
+                   style="text-align:center;width: 100%;">
             <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
         </div>
         <!-- /input-group -->
 
-        <div class="social-network" style="text-align:left;">
+<!--        <div class="social-network" style="text-align:left;">
 
             <img src="images/facebook.png" style="height: 70px;">
             <img src="images/google-plus.png" style="height: 70px;">
             <img src="images/twitter.png" style="height: 70px;">
 
-        </div>
+        </div>-->
         <form action="gamestart" method="post" id="hostsubmit" name="hostsubmit">
             <input type="hidden" name="id" id="id" value="{{$users->id}}">
             <input type="hidden" name="code" id="code" value="{{$users->gamecode}}">

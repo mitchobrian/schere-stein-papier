@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<>
+
     <title>Schnick Schnack Schnuck - @yield('title')</title>
 
     <meta charset="utf-8">

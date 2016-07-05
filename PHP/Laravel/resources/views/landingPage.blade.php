@@ -9,7 +9,7 @@
     
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container-fluid" style="margin-bottom: 150px;margin-top:-20px;" align="center">
+      <div class="container-fluid" style="margin-bottom: 10%;margin-top:-20px;" align="center">
         <div class="logo-groß"> 
              <a href=""><img class="img-responsive" src="images/sss_logo_large.png" alt="Movie Places" /></a>
         </div> 
