@@ -45,13 +45,33 @@
             <div class="row row-centered">
                 <div id="auswahl-div" >
                     <div class="col-md-5 col-sm-5 col-xs-5">
-                        <div class="auswahl"><img display="table" class="img-responsive" src="images/auswahlIcons/schere/gif/links_schere_win.gif" ></div>
+                        <div class="auswahl" id="Schere1_win"><img  display="table" class="img-responsive" src="images/auswahlIcons/schere/gif/links_schere_win.gif" ></div>
+                        <div class="auswahl" id="Schere1_lose"><img  display="table" class="img-responsive" src="images/auswahlIcons/schere/gif/links_schere_lose.gif" ></div>
+                        <div class="auswahl" id="Schere1_remis"><img  display="table" class="img-responsive" src="images/auswahlIcons/schere/gif/links_schere_remis.gif" ></div>
+
+                        <div class="auswahl" id="Papier1_win"><img  display="table" class="img-responsive" src="images/auswahlIcons/papier/gif/links_papier_win.gif" ></div>
+                        <div class="auswahl" id="Papier1_lose"><img  display="table" class="img-responsive" src="images/auswahlIcons/papier/gif/links_papier_lose.gif" ></div>
+                        <div class="auswahl" id="Papier1_remis"><img  display="table" class="img-responsive" src="images/auswahlIcons/papier/gif/links_papier_remis.gif" ></div>
+
+                        <div class="auswahl" id="Stein1_win"><img  display="table" class="img-responsive" src="images/auswahlIcons/stein/gif/links_stein_win.gif" ></div>
+                        <div class="auswahl" id="Stein1_lose"><img  display="table" class="img-responsive" src="images/auswahlIcons/stein/gif/links_stein_lose.gif" ></div>
+                        <div class="auswahl" id="Stein1_remis"><img  display="table" class="img-responsive" src="images/auswahlIcons/stein/gif/links_stein_remis.gif" ></div>
                     </div>
                     <div class="col-sm-2 col-xs-2">
                         <div class="auswahl"><h1 align="center" display="table">VS</h1></div>
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-5">
-                        <div class="auswahl"><img display="table" class="img-responsive" src="images/auswahlIcons/papier/gif/papier_rot_lose.gif"></div>
+                        <div class="auswahl" id="Schere2_win"><img  display="table" class="img-responsive" src="images/auswahlIcons/schere/gif/rechts_schere_win.gif" ></div>
+                        <div class="auswahl" id="Schere2_lose"><img  display="table" class="img-responsive" src="images/auswahlIcons/schere/gif/rechts_schere_lose.gif" ></div>
+                        <div class="auswahl" id="Schere2_remis"><img  display="table" class="img-responsive" src="images/auswahlIcons/schere/gif/rechts_schere_remis.gif" ></div>
+
+                        <div class="auswahl" id="Papier2_win"><img  display="table" class="img-responsive" src="images/auswahlIcons/papier/gif/rechts_papier_win.gif" ></div>
+                        <div class="auswahl" id="Papier2_lose"><img  display="table" class="img-responsive" src="images/auswahlIcons/papier/gif/rechts_papier_lose.gif" ></div>
+                        <div class="auswahl" id="Papier2_remis"><img  display="table" class="img-responsive" src="images/auswahlIcons/papier/gif/rechts_papier_remis.gif" ></div>
+
+                        <div class="auswahl" id="Stein2_win"><img  display="table" class="img-responsive" src="images/auswahlIcons/stein/gif/rechts_stein_win.gif" ></div>
+                        <div class="auswahl" id="Stein2_lose"><img  display="table" class="img-responsive" src="images/auswahlIcons/stein/gif/rechts_stein_lose.gif" ></div>
+                        <div class="auswahl" id="Stein2_remis"><img  display="table" class="img-responsive" src="images/auswahlIcons/stein/gif/rechts_stein_remis.gif" ></div>
                     </div>
                 </div>
             </div>

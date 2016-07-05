@@ -15,17 +15,18 @@ $(document).ready(function () {
 
 
     //Hide all Symboles
-    $('.sym').hide();
+    $('.auswahl').hide();
 
     switch (p1Choice) {
         case "Schere"://IF P1 CHOICE = SCHERE
-            $('#Schere1').show();
+            
             if (p2Choice == "Schere") {
+                $('#Schere1_remis').show();
                 //Set Winnertext
                 $('#winner').text('Unentschieden');
 
                 //Show The Symbols
-                $('#Schere2').show();
+                $('#Schere2_remis').show();
                 
                 
                 insertmatchwinner(3);
@@ -33,12 +34,12 @@ $(document).ready(function () {
             }
 
             if (p2Choice == "Papier") {
-                alert('SDGF');
+                $('#Schere1_win').show();
                 //Set Points of P1 +1
                 $("#p1Points").text(p1Counter + 1);
 
                 //Show The Symbols
-                $('#Papier2').show();
+                $('#Papier2_lose').show();
 
                 //Set Winnertext
                 $('#winner').text('Schere schneidet Papier! (Player1 gewinnt)');
@@ -47,11 +48,12 @@ $(document).ready(function () {
             }
 
             if (p2Choice == "Stein") {
+                $('#Schere1_lose').show();
                 //Set Points of P2 +1
                 $("#p2Points").text(p2Counter + 1);
 
                 //Show The Symbols
-                $('#Stein2').show();
+                $('#Stein2_win').show();
 
                 //Set Winnertext
                 $('#winner').text('Stein schlägt Schere (Player2 gewinnt)');
@@ -63,24 +65,26 @@ $(document).ready(function () {
             break;
 
         case "Stein"://IF P1 CHOICE = STEIN
-            $('#Stein1').show();
+            
             if (p2Choice == "Stein") {
+                $('#Stein1_remis').show();
                 //Set Winnertext
                 $('#winner').text('Unentschieden');
 
                 //Show The Symbols
 
-                $('#Stein2').show();
+                $('#Stein2_remis').show();
 
                 insertmatchwinner(3);
             }
 
             if (p2Choice == "Papier") {
+                $('#Stein1_lose').show();
                 //Set Points of P2 +1
                 $("#p2Points").text(p2Counter + 1);
 
                 //Show The Symbols
-                $('#Papier2').show();
+                $('#Papier2_win').show();
 
                 //Set Winnertext
                 $('#winner').text('Papier schlägt Stein! (Player2 gewinnt)');
@@ -89,11 +93,12 @@ $(document).ready(function () {
             }
 
             if (p2Choice == "Schere") {
+                $('#Stein1_win').show();
                 //Set Points of P1 +1
                 $("#p1Points").text(p1Counter + 1);
 
                 //Show The Symbols
-                $('#Stein2').show();
+                $('#Stein2_lose').show();
 
                 //Set Winnertext
                 $('#winner').text('Stein schlägt Schere (Player1 gewinnt)');
@@ -103,24 +108,26 @@ $(document).ready(function () {
             break;
 
         case "Papier": //IF P1 CHOICE = Papier
-            $('#Papier1').show();
+           
             if (p2Choice == "Papier") {
+                $('#Papier1_remis').show();
                 //Set Winnertext
                 $('#winner').text('Unentschieden');
 
                 //Show The Symbols
 
-                $('#Papier2').show();
+                $('#Papier2_remis').show();
 
                 insertmatchwinner(3);
             }
 
             if (p2Choice == "Schere") {
+                $('#Papier1_lose').show();
                 //Set Points of P2 +1
                 $("#p2Points").text(p2Counter + 1);
 
                 //Show The Symbols
-                $('#Schere2').show();
+                $('#Schere2_win').show();
 
                 //Set Winnertext
                 $('#winner').text('Schere schneidet Papier! (Player2 gewinnt)');
@@ -129,11 +136,12 @@ $(document).ready(function () {
             }
 
             if (p2Choice == "Stein") {
+                $('#Papier1_win').show();
                 //Set Points of P1 +1
                 $("#p1Points").text(p1Counter + 1);
 
                 //Show The Symbols
-                $('#Stein2').show();
+                $('#Stein2_lose').show();
 
                 //Set Winnertext
                 $('#winner').text('Papier schlägt Stein (Player1 gewinnt)');
