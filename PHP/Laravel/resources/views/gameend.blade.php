@@ -16,11 +16,11 @@
         <div class="row row-centered">
             <div id="player-outer-div">
                 <div class="col-md-4 col-sm-5 col-xs-6 col-centered">
-                    <h1 align="center" id="player1-div">Player 1</h1>
+                    <h1 align="center" id="player1-div">{{$player1}}</h1>
                 </div>
                 <div class="col-md-4 col-xs-2 col-centered"></div>
                 <div class="col-md-4 col-sm-5 col-xs-6 col-centered">
-                    <h1 align="center" id="player2-div">Player 2</h1>
+                    <h1 align="center" id="player2-div">{{$player2}}</h1>
                 </div>
             </div>
         </div>
@@ -77,9 +77,13 @@
         <script>
             var p2Choice = '{{$p2choice}}';
             var p1Choice = '{{$choice}}';
+            var match_id = '{{$match->id}}';
+            var player1 = '{{$player1}}';
+            var player2 = '{{$player2}}';
+            var hoster = '{{$hoster}}';
 
             console.log(p2Choice);
-            console.log('{{$choice}}')
+            console.log('{{$choice}}');
 
         </script>
 

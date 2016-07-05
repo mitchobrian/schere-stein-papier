@@ -26,6 +26,10 @@ $(document).ready(function () {
 
                 //Show The Symbols
                 $('#Schere2').show();
+                
+                
+                insertmatchwinner(3);
+                
             }
 
             if (p2Choice == "Papier") {
@@ -38,6 +42,8 @@ $(document).ready(function () {
 
                 //Set Winnertext
                 $('#winner').text('Schere schneidet Papier! (Player1 gewinnt)');
+
+                insertmatchwinner(1);
             }
 
             if (p2Choice == "Stein") {
@@ -49,6 +55,10 @@ $(document).ready(function () {
 
                 //Set Winnertext
                 $('#winner').text('Stein schlägt Schere (Player2 gewinnt)');
+
+                insertmatchwinner(2);
+                
+                
             }
             break;
 
@@ -61,6 +71,8 @@ $(document).ready(function () {
                 //Show The Symbols
 
                 $('#Stein2').show();
+
+                insertmatchwinner(3);
             }
 
             if (p2Choice == "Papier") {
@@ -72,6 +84,8 @@ $(document).ready(function () {
 
                 //Set Winnertext
                 $('#winner').text('Papier schlägt Stein! (Player2 gewinnt)');
+
+                insertmatchwinner(2);
             }
 
             if (p2Choice == "Schere") {
@@ -83,6 +97,8 @@ $(document).ready(function () {
 
                 //Set Winnertext
                 $('#winner').text('Stein schlägt Schere (Player1 gewinnt)');
+
+                insertmatchwinner(1);
             }
             break;
 
@@ -95,6 +111,8 @@ $(document).ready(function () {
                 //Show The Symbols
 
                 $('#Papier2').show();
+
+                insertmatchwinner(3);
             }
 
             if (p2Choice == "Schere") {
@@ -106,6 +124,8 @@ $(document).ready(function () {
 
                 //Set Winnertext
                 $('#winner').text('Schere schneidet Papier! (Player2 gewinnt)');
+
+                insertmatchwinner(2);
             }
 
             if (p2Choice == "Stein") {
@@ -117,7 +137,26 @@ $(document).ready(function () {
 
                 //Set Winnertext
                 $('#winner').text('Papier schlägt Stein (Player1 gewinnt)');
+
+                insertmatchwinner(1);
             }
             break;
     }
 })
+
+function insertmatchwinner(winner) {
+    console.log(hoster);
+    console.log(winner);
+     if (hoster) {
+         console.log("insertmatchwinner")
+         $.ajax({
+             'url': 'insertmatchwinner',
+             'type': 'get',
+             'dataType': 'json',
+             'data': {
+                 'winner': winner,
+                 'match_id': match_id,
+             }
+         });
+     }
+}

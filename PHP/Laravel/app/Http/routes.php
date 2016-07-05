@@ -58,6 +58,8 @@ Route::get("insertselection", "StoreController@insertselection");
 
 Route::get("gamepolling", "StoreController@gamepolling");
 
+Route::get("insertmatchwinner", "GameEndController@insertmatchwinner");
+
 
 Route::get('test',
 		['as' => 'test', 'uses' => 'testcontroller@test']);
