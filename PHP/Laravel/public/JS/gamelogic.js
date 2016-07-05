@@ -1,15 +1,8 @@
 $(document).ready(function () {
-
-
-
-    
-    console.log(id);
     $('#hurry').hide();
 
     var mySelection
-    console.log("anfaG");
-
-
+    
     //Make selection
     $('#auswahl-div img').on('click', function (e) {
         console.log("gewählt");

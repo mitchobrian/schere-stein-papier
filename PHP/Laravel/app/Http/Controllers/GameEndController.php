@@ -58,20 +58,22 @@ class GameEndController extends Controller
 
             $player1 = $match->user_b_name;
             $player2 = $match->user_a_name;
+            
+
 
             $hoster = false;
         }
+
+        $code = $match->gamecode;
         
         
-        return view('gameend', compact('choice', 'p2choice', 'match', 'player1', 'player2', 'hoster'));
+        return view('gameend', compact('choice', 'p2choice', 'match', 'player1', 'player2', 'hoster', 'code', 'userid'));
     }
 
     public function insertmatchwinner() {
-        $match_id = $this->fetch(user_id);
-        $winner = $this->fetch(winner);
+        $match_id = $this->fetch('match_id');
+        $winner = $this->fetch('winner');
         var_dump($match_id);
-        var_dump($winner);
-
         if ($winner == 1) {
             DB::table('match')
                 ->where('id', $match_id)
@@ -104,5 +106,55 @@ class GameEndController extends Controller
             'output' => $output,
             'latest' => $latest
         ));
+    }
+    
+    public function insertnochmaldecision() {
+        $match_id = $this->fetch('match_id');
+        $hoster = $this->fetch('hoster');
+        
+        if ($hoster) {
+            DB::table('match')
+                ->where('id', $match_id)
+                ->where('winner', '>', 0)
+                ->update(array('nochmal_a' => 1));
+            
+        } else {
+            DB::table('match')
+                ->where('id', $match_id)
+                ->where('winner', '>', 0)
+                ->update(array('nochmal_b' => 1));
+            
+        }
+        
+    }
+    
+    public function nochmalspielen() {
+        
+        $userid = $this->fetch('userid');
+        $matchid = $this->fetch('matchid');
+        $hoster = $this->fetch('hoster');
+
+        if ($hoster) {
+            $results = DB::table('match')
+                ->where('id', $matchid)
+                ->where('nochmal_b', '>', 0)
+                ->first();
+           
+
+        } else {
+            $results = DB::table('match')
+                ->where('id', $matchid)
+                ->where('nochmal_a', '>', 0)
+                ->first();
+        }
+        
+       
+        if ($results) {
+            $this->output(true, "");
+        } else {
+            $this->output(false, "");
+        }
+        
+        
     }
 }

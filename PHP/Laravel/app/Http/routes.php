@@ -60,6 +60,10 @@ Route::get("gamepolling", "StoreController@gamepolling");
 
 Route::get("insertmatchwinner", "GameEndController@insertmatchwinner");
 
+Route::get("nochmalspielen", "GameEndController@nochmalspielen");
+
+Route::get("insertnochmaldecision", "GameEndController@insertnochmaldecision");
+
 
 Route::get('test',
 		['as' => 'test', 'uses' => 'testcontroller@test']);

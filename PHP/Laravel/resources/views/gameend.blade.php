@@ -76,6 +76,12 @@
                 </div>
             </div>
 
+            <form action="gamestart" method="post" id="nochmalform" name="nochmalform">
+                <input type="hidden" name="id" id="id" value="{{$userid}}">
+                <input type="hidden" name="code" id="code" value="{{$code}}">
+                <input type="hidden" name="_token" value="{{ csrf_token()}}">
+            </form>
+
     
         
         
@@ -85,9 +91,9 @@
             <div class="container" style="text-align:center;margin-top:-3%;">
                 <div>
                     <h3>Zur Zeit steht es <span id="p1Points">0</span> zu <span id="p2Points">0</span> !</h3>
-                    <a class="btn btn-primary btn-lg" href="/"
-                       style="background:Green;"
-                       role="button">Nochmal?</a>
+
+                        <input type="submit" name ="nochmal" id="nochmal" class="btn btn-primary btn-lg">
+
                     <br><br>
                 </div>
             </div>
@@ -101,6 +107,8 @@
             var player1 = '{{$player1}}';
             var player2 = '{{$player2}}';
             var hoster = '{{$hoster}}';
+            var id = '{{$userid}}';
+            var code = '{{$code}}';
 
             console.log(p2Choice);
             console.log('{{$choice}}');

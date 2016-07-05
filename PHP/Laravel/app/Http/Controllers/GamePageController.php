@@ -26,17 +26,14 @@ class GamePageController extends Controller
 
     public function gamestart(Request $request) {
 
-
         $id = input::get('id');
-
+        $code = input::get('code');
 
         $newgame = DB::table('Games')
-
-            ->where('user_a_id', $id)
+            ->where('gamecode', $code)
             ->first();
 
-
-        return view('gamepage', compact('newgame', 'id'));
+            return view('gamepage', compact('newgame', 'id'));
 
     }
 }

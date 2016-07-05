@@ -61,13 +61,7 @@
 </div>
 </div>
 <script>
-
-    console.log('{{$id}}');
     var id = '{{$id}}';
-
-
-
-
     var gameEnd = "{{ route('gameend')}}";
 
 </script>

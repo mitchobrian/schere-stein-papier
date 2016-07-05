@@ -39,6 +39,7 @@
         </div>
         <form action="gamestart" method="post" id="hostsubmit" name="hostsubmit">
             <input type="hidden" name="id" id="id" value="{{$users->id}}">
+            <input type="hidden" name="code" id="code" value="{{$users->gamecode}}">
             <input type="hidden" name="_token" value="{{ csrf_token()}}">
         </form>
 

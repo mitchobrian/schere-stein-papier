@@ -27,7 +27,10 @@ class CreateMatchTable extends Migration
             $table->string('user_b_name')->default("0");;
             $table->string('user_b_decision')->default("0");;
 
-            $table->integer('winner')->default(0);;
+            $table->integer('winner')->default(0);
+            
+            $table->integer('nochmal_a')->default(0);
+            $table->integer('nochmal_b')->default(0);
 
             $table->timestamps();
         });

@@ -5,13 +5,22 @@ $(document).ready(function () {
     var p1Counter = 0;
     var p2Counter = 0;
 
+    $('#nochmal').on('click', function (e) {
 
-   /* //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!
-    var randomChoice = Array("Schere", "Stein", "Papier");
-    var p2Choice = randomChoice[Math.floor(randomChoice.length * Math.random())];
-    console.log(p1Choice + " " + p1Points);
-    console.log(p2Choice + " " + p2Points);
-    //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!*/
+        nochmalinsertdecision();
+        c.getMessage(function (message) {
+        });
+
+
+    })
+
+
+    /* //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!
+     var randomChoice = Array("Schere", "Stein", "Papier");
+     var p2Choice = randomChoice[Math.floor(randomChoice.length * Math.random())];
+     console.log(p1Choice + " " + p1Points);
+     console.log(p2Choice + " " + p2Points);
+     //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!*/
 
 
     //Hide all Symboles
@@ -19,7 +28,7 @@ $(document).ready(function () {
 
     switch (p1Choice) {
         case "Schere"://IF P1 CHOICE = SCHERE
-            
+
             if (p2Choice == "Schere") {
                 $('#Schere1_remis').show();
                 //Set Winnertext
@@ -27,10 +36,10 @@ $(document).ready(function () {
 
                 //Show The Symbols
                 $('#Schere2_remis').show();
-                
-                
+
+
                 insertmatchwinner(3);
-                
+
             }
 
             if (p2Choice == "Papier") {
@@ -59,13 +68,13 @@ $(document).ready(function () {
                 $('#winner').text('Stein schlägt Schere (Player2 gewinnt)');
 
                 insertmatchwinner(2);
-                
-                
+
+
             }
             break;
 
         case "Stein"://IF P1 CHOICE = STEIN
-            
+
             if (p2Choice == "Stein") {
                 $('#Stein1_remis').show();
                 //Set Winnertext
@@ -108,7 +117,7 @@ $(document).ready(function () {
             break;
 
         case "Papier": //IF P1 CHOICE = Papier
-           
+
             if (p2Choice == "Papier") {
                 $('#Papier1_remis').show();
                 //Set Winnertext
@@ -155,16 +164,73 @@ $(document).ready(function () {
 function insertmatchwinner(winner) {
     console.log(hoster);
     console.log(winner);
-     if (hoster) {
-         console.log("insertmatchwinner")
-         $.ajax({
-             'url': 'insertmatchwinner',
-             'type': 'get',
-             'dataType': 'json',
-             'data': {
-                 'winner': winner,
-                 'match_id': match_id,
-             }
-         });
-     }
+    if (hoster) {
+        console.log("insertmatchwinner")
+        $.ajax({
+            'url': 'insertmatchwinner',
+            'type': 'get',
+            'dataType': 'json',
+            'data': {
+                'winner': winner,
+                'match_id': match_id,
+            }
+        });
+    }
 }
+
+function nochmalinsertdecision() {
+    $.ajax({
+        'url': 'insertnochmaldecision',
+        'type': 'get',
+        'dataType': 'json',
+        'data': {
+            'match_id': match_id,
+            'hoster': hoster,
+        }
+    });
+    
+
+}
+
+function Chatter() {
+    this.getMessage = function () {
+        var t = this;
+        var latest = null;
+
+
+        $.ajax({
+            'url': 'nochmalspielen',
+            'type': 'get',
+            'dataType': 'json',
+
+            'data': {
+                'mode': 'post',
+                'userid': id,
+                'matchid': match_id,
+                'hoster': hoster,
+            },
+            'timeout': 3000000,
+            'cache': false,
+            'success': function (result) {
+
+                if (result.result) {
+                    $('#nochmalform').submit();
+                    callback(result.message);
+                    latest = result.latest;
+
+                }
+            },
+            'error': function (e) {
+                console.log(e);
+            },
+            'complete': function () {
+                t.getMessage();
+            }
+        });
+    };
+
+
+};
+
+var c = new Chatter();
+    
