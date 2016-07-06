@@ -107,7 +107,7 @@ $(document).ready(function () {
                 $("#p1Points").text(p1Counter + 1);
 
                 //Show The Symbols
-                $('#Stein2_lose').show();
+                $('#Schere2_lose').show();
 
                 //Set Winnertext
                 $('#winner').text('Stein schlägt Schere (Player1 gewinnt)');
