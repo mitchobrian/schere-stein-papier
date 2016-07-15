@@ -58,7 +58,7 @@ return [
             'port' => '3306',
             'database' => 'ssp',
             'username' => 'root',
-            'password' => '',
+            'password' => 'asdasD11',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

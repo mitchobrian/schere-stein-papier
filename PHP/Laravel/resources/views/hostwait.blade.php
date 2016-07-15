@@ -1,20 +1,20 @@
 @extends('master')
-
 @section('title', 'LandingPage')
+
 {{ Html::style('css/bootstrap.min.css') }}
 {{ Html::style('css/style.css') }}
 {{ Html::style('css/font-awesome-animation.min.css') }}
 
 
-
 @section('content')
-
+{{Html::script('JS/jquery.min.js')}}
+{{Html::script('JS/notify.js')}}
         <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container-fluid" style="margin-bottom: 30px;margin-top:-20px;" align="center">
-        <h2 style="margin-top:50px;">PLAYER 1 bitte warte, bis dein Partner das Spiel betritt.</h2>
+        <h2 style="margin-top:50px;">{{$users->username}} bitte warte, bis dein Partner das Spiel betritt.</h2>
         <hr>
-        <img src="images/arrow.png" class="arrow" alt="Wartegif" >
+        <img src="images/arrow.png" class="arrow" alt="Wartegif">
         <br><br>
         <p class="alert alert-info" id="alert" style="width: 100%;">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
@@ -24,42 +24,41 @@
 
         <div class="input-group">
             <br>
-            <input type="text" class="form-control input-lg txtGameCode"  id="gamecode" placeholder="CODE" value="{{$users->gamecode}}"
+            <input type="text" class="form-control input-lg txtGameCode" id="gamecode" placeholder="CODE"
+                   value="{{url('/')}}/{{$users->gamecode}}"
                    style="text-align:center;width: 100%;">
             <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>
         </div>
         <!-- /input-group -->
 
-<!--        <div class="social-network" style="text-align:left;">
+        <!--        <div class="social-network" style="text-align:left;">
 
-            <img src="images/facebook.png" style="height: 70px;">
-            <img src="images/google-plus.png" style="height: 70px;">
-            <img src="images/twitter.png" style="height: 70px;">
+                    <img src="images/facebook.png" style="height: 70px;">
+                    <img src="images/google-plus.png" style="height: 70px;">
+                    <img src="images/twitter.png" style="height: 70px;">
 
-        </div>-->
+                </div>-->
         <form action="gamestart" method="post" id="hostsubmit" name="hostsubmit">
             <input type="hidden" name="id" id="id" value="{{$users->id}}">
             <input type="hidden" name="code" id="code" value="{{$users->gamecode}}">
             <input type="hidden" name="_token" value="{{ csrf_token()}}">
         </form>
 
-      <script>
+        <script>
             //Generate Gamecode
 
-                window.addEventListener('load', function () {
-               /* var gamecode = document.querySelector('.txtGameCode');
+            window.addEventListener('load', function () {
+                /* var gamecode = document.querySelector('.txtGameCode');
 
-                var text = "";
-                var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                 var text = "";
+                 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-                for (var i = 0; i < 6; i++)
-                    text += possible.charAt(Math.floor(Math.random() * possible.length));
+                 for (var i = 0; i < 6; i++)
+                 text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-                gamecode.value = text;*/
+                 gamecode.value = text;*/
 
             });
-
-
 
 
             //Countdown
@@ -80,8 +79,8 @@
                 }, 1000);
             }
 
-            function Chatter(){
-                this.getMessage = function(){
+            function Chatter() {
+                this.getMessage = function () {
                     var t = this;
                     var latest = null;
 
@@ -98,33 +97,31 @@
                         },
                         'timeout': 3000000,
                         'cache': false,
-                        'success': function(result){
-                            if(result.result){
+                        'success': function (result) {
+                            if (result.result) {
                                 $('#hostsubmit').submit();
                                 callback(result.message);
                                 latest = result.latest;
 
                             }
                         },
-                        'error': function(e){
+                        'error': function (e) {
                             console.log(e);
                         },
-                        'complete': function(){
+                        'complete': function () {
                             t.getMessage();
                         }
                     });
                 };
 
 
-            };
+            }
+            ;
 
             var c = new Chatter();
 
 
-
-
             window.onload = function () {
-
 
 
                 var fifteenMinutes = 60 * 15,
@@ -132,25 +129,15 @@
                 startTimer(fifteenMinutes, display);
 
 
-
-                c.getMessage(function(message){
-
-
-
+                c.getMessage(function (message) {
 
 
                 });
 
 
-
-
-
-
-
-
             };
 
-
+            $('.copybtn').notify("Access granted", "success");
             //Copy-Funktion
             var copyTextareaBtn = document.querySelector('.copybtn');
 
@@ -161,14 +148,13 @@
                 try {
                     var successful = document.execCommand('copy');
                     var msg = successful ? 'successful' : 'unsuccessful';
-                    alert('Der Gamecode wurde kopiert!');
+
                 } catch (err) {
                     alert('Konnte Gamecode nicht kopieren...');
                 }
             });
 
-      </script>
-
+        </script>
 
 
     </div>
