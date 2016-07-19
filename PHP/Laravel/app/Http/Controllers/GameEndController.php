@@ -29,8 +29,8 @@ class GameEndController extends Controller
 
         $match = DB::table('match')
             ->select('match.id', 'user_a_decision', 'user_b_decision')
-            ->join('Games', 'match.f_game_id' , '=', 'Games.id')
-            ->where('Games.gamecode', Session::get('gamecode'))
+            ->join('games', 'match.f_game_id' , '=', 'games.id')
+            ->where('games.gamecode', Session::get('gamecode'))
             ->where('match.winner', '<', 1)
             ->first();
 

@@ -102,8 +102,8 @@ class StoreController extends Controller
                 Session::put('ishost', 0);
                 Session::put('username', $users->username);
 
-                //Erstellt Datensatz Game in Games Tabelle
-                $newgame = new Games;
+                //Erstellt Datensatz Game in games Tabelle
+                $newgame = new games;
                 $newgame->gamecode = input::get("code");
                 $newgame->f_user_a_id = $users->id;
                 $newgame->f_user_b_id = $joinusers->id;
@@ -148,7 +148,7 @@ class StoreController extends Controller
 
         $id = input::get('id');
 
-        $newgame = DB::table('Games')
+        $newgame = DB::table('games')
 
             ->where('f_user_a_id', $id)
             ->first();
@@ -165,9 +165,9 @@ class StoreController extends Controller
 
 
         $result = DB::table('match')
-            ->join('Games', 'match.f_game_id' , '=', 'Games.id')
-            ->select('Games.gamecode')
-            ->where('Games.gamecode', Session::get('gamecode'))
+            ->join('games', 'match.f_game_id' , '=', 'games.id')
+            ->select('games.gamecode')
+            ->where('games.gamecode', Session::get('gamecode'))
             ->where('match.winner', '=', 0)
             ->first();
 
@@ -179,15 +179,15 @@ class StoreController extends Controller
             if(Session::get('ishost') == 1) {
                 
                 DB::table('match')
-                    ->join('Games', 'match.f_game_id' , '=', 'Games.id')
-                    ->where('Games.gamecode', Session::get('gamecode'))
+                    ->join('games', 'match.f_game_id' , '=', 'games.id')
+                    ->where('games.gamecode', Session::get('gamecode'))
                     ->where('match.winner', '<', 1)
                     ->update(array('match.f_user_a_id' => Session::get('id'), 'user_a_decision' =>$selection));
             }
             else {
                 DB::table('match')
-                    ->join('Games', 'match.f_game_id' , '=', 'Games.id')
-                    ->where('Games.gamecode', Session::get('gamecode'))
+                    ->join('games', 'match.f_game_id' , '=', 'games.id')
+                    ->where('games.gamecode', Session::get('gamecode'))
                     ->where('match.winner', '<', 1)
                     ->update(array('match.f_user_b_id' => Session::get('id'), 'user_b_decision' =>$selection));
             }
@@ -202,20 +202,20 @@ class StoreController extends Controller
 
         if(Session::get('ishost') == 1) {
             $results = DB::table('match')
-                ->join('Games', 'match.f_game_id' , '=', 'Games.id')
-                ->select('match.user_b_decision', 'Games.gamecode', 'match.winner')
+                ->join('games', 'match.f_game_id' , '=', 'games.id')
+                ->select('match.user_b_decision', 'games.gamecode', 'match.winner')
                 ->where('match.winner', '<', 1)
-                ->where('Games.gamecode', Session::get('gamecode'))
+                ->where('games.gamecode', Session::get('gamecode'))
                 ->where('match.user_b_decision', 'not like', "0")
                 ->first();
 
         }
         else {
             $results = DB::table('match')
-                ->join('Games', 'match.f_game_id' , '=', 'Games.id')
-                ->select('match.user_a_decision', 'Games.gamecode', 'match.winner')
+                ->join('games', 'match.f_game_id' , '=', 'games.id')
+                ->select('match.user_a_decision', 'games.gamecode', 'match.winner')
                 ->where('match.winner', '<', 1)
-                ->where('Games.gamecode', Session::get('gamecode'))
+                ->where('games.gamecode', Session::get('gamecode'))
                 ->where('match.user_a_decision', 'not like', "0")
                 ->first();
 

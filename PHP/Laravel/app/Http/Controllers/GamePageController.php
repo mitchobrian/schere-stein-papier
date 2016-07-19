@@ -32,17 +32,18 @@ class GamePageController extends Controller
         $id = session::get('id');
         $code = session::get('gamecode');
 
-        $newgame = DB::table('Games')
+        $newgame = DB::table('games')
             ->where('gamecode', $code)
             ->first();
 
-if(session::get('ishost')) {
+if(session::get('ishost') == 1) {
         $match = new match();
 
         $match->f_game_id = $newgame->id;
         $match->f_user_a_id = $newgame->f_user_a_id;
         $match->f_user_b_id = $newgame->f_user_b_id;
-        $match->save(); }
+        $match->save();
+}
 
             return view('gamepage', compact('newgame', 'id'));
 

@@ -42,7 +42,7 @@ class CreateMatchTable extends Migration
                 ->onDelete('cascade');
 
             $table->foreign('f_game_id')
-                ->references('id')->on('Games')
+                ->references('id')->on('games')
                 ->onDelete('cascade');
         });
     }
