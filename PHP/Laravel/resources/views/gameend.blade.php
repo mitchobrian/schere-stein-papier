@@ -16,11 +16,11 @@
         <div class="row row-centered">
             <div id="player-outer-div">
                 <div class="col-md-4 col-sm-5 col-xs-6 col-centered">
-                    <h1 align="center" id="player1-div">{{$player1}}</h1>
+                    <h1 align="center" id="player1-div">{{Session::get('username')}}</h1>
                 </div>
                 <div class="col-md-4 col-xs-2 col-centered"></div>
                 <div class="col-md-4 col-sm-5 col-xs-6 col-centered">
-                    <h1 align="center" id="player2-div">{{$player2}}</h1>
+                    <h1 align="center" id="player2-div">Gegner</h1>
                 </div>
             </div>
         </div>
@@ -73,8 +73,8 @@
             </div>
 
             <form action="gamestart" method="post" id="nochmalform" name="nochmalform">
-                <input type="hidden" name="id" id="id" value="{{$userid}}">
-                <input type="hidden" name="code" id="code" value="{{$code}}">
+
+
                 <input type="hidden" name="_token" value="{{ csrf_token()}}">
             </form>
 
@@ -97,18 +97,17 @@
         </div>
     </div>
 
+
         <script>
             var p2Choice = '{{$p2choice}}';
             var p1Choice = '{{$choice}}';
             var match_id = '{{$match->id}}';
-            var player1 = '{{$player1}}';
-            var player2 = '{{$player2}}';
-            var hoster = '{{$hoster}}';
-            var id = '{{$userid}}';
-            var code = '{{$code}}';
+            console.log(match_id);
+            var hoster = '{{$ishost}}';
+            var player1 = 'player1';
+            var player2 = 'player2';
 
-            console.log(p2Choice);
-            console.log('{{$choice}}');
+
 
         </script>
 

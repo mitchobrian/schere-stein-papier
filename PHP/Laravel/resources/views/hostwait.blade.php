@@ -40,6 +40,7 @@
         </form>
 
         <script>
+
             //Generate Gamecode
 
             window.addEventListener('load', function () {
@@ -144,10 +145,17 @@
                     var successful = document.execCommand('copy');
                     var msg = successful ? 'successful' : 'unsuccessful';
 
+
                 } catch (err) {
                     alert('Konnte Gamecode nicht kopieren...');
+
                 }
             });
+
+            function test() {
+                alert("ok");
+
+            }
 
         </script>
 <p class="alert alert-info" id="alert" style="width: 100%;">

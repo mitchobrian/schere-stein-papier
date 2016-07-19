@@ -14,6 +14,9 @@ use App\match;
 use App\Http\Requests;
 
 
+use Illuminate\Support\Facades\Session;
+
+
 use Illuminate\Support\Facades\Input;
 
 
@@ -26,14 +29,25 @@ class GamePageController extends Controller
 
     public function gamestart(Request $request) {
 
-        $id = input::get('id');
-        $code = input::get('code');
+        $id = session::get('id');
+        $code = session::get('gamecode');
 
         $newgame = DB::table('Games')
             ->where('gamecode', $code)
             ->first();
 
+if(session::get('ishost')) {
+        $match = new match();
+
+        $match->f_game_id = $newgame->id;
+        $match->f_user_a_id = $newgame->f_user_a_id;
+        $match->f_user_b_id = $newgame->f_user_b_id;
+        $match->save(); }
+
             return view('gamepage', compact('newgame', 'id'));
+
+
+
 
     }
 }

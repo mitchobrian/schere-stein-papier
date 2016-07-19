@@ -123,14 +123,13 @@ function Chatter(){
 var c = new Chatter();
 
 function insertdecision(selection) {
-    console.log("vor ajax");
     $.ajax({
         'url': 'insertselection',
         'type': 'get',
         'dataType': 'json',
         'data': {
             'selection': selection,
-            'userid': id
+            'gameid': gameid
         }
     });
 

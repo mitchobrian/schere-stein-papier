@@ -55,7 +55,8 @@
 </div>
 </div>
 <script>
-    var id = '{{$id}}';
+    var id = '{{Session::get('id')}}';
+    var gameid = '{{$newgame->id}}'
     var gameEnd = "{{ route('gameend')}}";
 
 </script>

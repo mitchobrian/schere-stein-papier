@@ -25,6 +25,9 @@ $(document).ready(function () {
 
     //Hide all Symboles
     $('.auswahl').hide();
+    
+    console.log("ASDAS");
+    console.log(match_id + " zweite reintarg");
 
     switch (p1Choice) {
         case "Schere"://IF P1 CHOICE = SCHERE
@@ -162,10 +165,9 @@ $(document).ready(function () {
 })
 
 function insertmatchwinner(winner) {
-    console.log(hoster);
+    console.log("HAASDASDASDASDASDASDAS");
     console.log(winner);
-    if (hoster) {
-        console.log("insertmatchwinner")
+        console.log("insertmatchwinner vom hoster")
         $.ajax({
             'url': 'insertmatchwinner',
             'type': 'get',
@@ -175,7 +177,7 @@ function insertmatchwinner(winner) {
                 'match_id': match_id,
             }
         });
-    }
+
 }
 
 function nochmalinsertdecision() {
@@ -185,7 +187,7 @@ function nochmalinsertdecision() {
         'dataType': 'json',
         'data': {
             'match_id': match_id,
-            'hoster': hoster,
+            
         }
     });
     
@@ -205,7 +207,6 @@ function Chatter() {
 
             'data': {
                 'mode': 'post',
-                'userid': id,
                 'matchid': match_id,
                 'hoster': hoster,
             },

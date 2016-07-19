@@ -16,15 +16,14 @@ class CreateMatchTable extends Migration
 
             $table->increments('id');
 
-            $table->string('gamecode')->default("0");;
-
-
-            $table->integer('user_a_id')->default(0);
-            $table->string('user_a_name')->default("0");;
+            $table->integer('f_game_id')->unsigned();
+            
+            $table->integer('f_user_a_id')->unsigned()->default(0);
+            
             $table->string('user_a_decision')->default("0");;
 
-            $table->integer('user_b_id')->default(0);;
-            $table->string('user_b_name')->default("0");;
+            $table->integer('f_user_b_id')->unsigned()->default(0);
+            
             $table->string('user_b_decision')->default("0");;
 
             $table->integer('winner')->default(0);
@@ -33,6 +32,18 @@ class CreateMatchTable extends Migration
             $table->integer('nochmal_b')->default(0);
 
             $table->timestamps();
+
+            $table->foreign('f_user_a_id')
+                ->references('id')->on('Users')
+                ->onDelete('cascade');
+
+            $table->foreign('f_user_b_id')
+                ->references('id')->on('Users')
+                ->onDelete('cascade');
+
+            $table->foreign('f_game_id')
+                ->references('id')->on('Games')
+                ->onDelete('cascade');
         });
     }
 
