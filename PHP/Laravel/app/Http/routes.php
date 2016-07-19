@@ -65,5 +65,12 @@ Route::get("nochmalspielen", "GameEndController@nochmalspielen");
 Route::get("insertnochmaldecision", "GameEndController@insertnochmaldecision");
 
 
+//HTTP MUSS GEAENDERT WERDEN AUF WEBSERVER
+Route::get('{gamecode?}', 'JoinLinkController@index')
+	->where('gamecode', '(.*)');
+
+Route::get("insertnochmaldecision", "JoinLinkController@index");
+
+
 Route::get('test',
 		['as' => 'test', 'uses' => 'testcontroller@test']);
