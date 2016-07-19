@@ -24,11 +24,7 @@
                 </div>
             </div>
         </div>
-            <div class="row row-centered">
-                <p id="rundeundspielauswertung">
-                    <h1 align="center" id="spielauswertung">Spielauswertung!</h1>
-                </p>
-            </div>
+
         
 
             <!-- Auswertung -->
@@ -57,7 +53,7 @@
                         <div class="auswahl" id="Stein1_lose"><img  display="table" class="img-responsive" src="images/auswahlIcons/stein/gif/links_stein_lose.gif" ></div>
                         <div class="auswahl" id="Stein1_remis"><img  display="table" class="img-responsive" src="images/auswahlIcons/stein/gif/links_stein_remis.gif" ></div>
                     </div>
-                    <div class="col-sm-2 col-xs-2">
+                    <div class="col-sm-1 col-xs-1">
                         <div class="auswahl"><h1 align="center" display="table">VS</h1></div>
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-5">
@@ -90,9 +86,10 @@
 
             <div class="container" style="text-align:center;margin-top:-3%;">
                 <div>
-                    <h3>Zur Zeit steht es <span id="p1Points">0</span> zu <span id="p2Points">0</span> !</h3>
+                    <h3>Es Steht: <span id="p1Points">0</span> zu <span id="p2Points">0</span> !</h3>
 
-                        <input type="submit" name ="nochmal" id="nochmal" class="btn btn-primary btn-lg">
+                        <a type="submit" name ="nochmal" id="nochmal" class="btn btn-primary btn-lg">Nochmal?</a>
+                    
 
                     <br><br>
                 </div>

@@ -13,9 +13,11 @@
         </div>
     </div>
 
+<!--
     <p id="rundeundspielauswertung">
         <h1 align="center">Runde X</h1>
     </p>
+-->
 
     <!-- Auswertung -->
     <div id="wählenundauswertung-div">
@@ -41,14 +43,6 @@
         </div>
     </div>
     <br>
-    <div style="text-align: center">
-        <button id="btnRandom" class="btn btn-primary btn-lg">Zufällige Wahl</button>
-    </div>
-
-
-    <div class="mySel"> Deine Auswahl:
-        <div id="getAuswahl"></div>
-    </div>
 </div>
 <form action="gameend" method="post" id="gameend" name="gameend">
     <input type="hidden" name="id" id="id" value="{{$id}}">

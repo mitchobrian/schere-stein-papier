@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ URL::route('landingPage')}}">Startseite <span class="sr-only">(current)</span></a></li>
-                <li><a href="{{ URL::route('contact')}}">Kontakt</a></li>
+<!--                <li><a href="{{ URL::route('contact')}}">Kontakt</a></li>-->
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -47,7 +47,7 @@
     
       <footer style="text-align:center;">
           <strong><p>&copy; 2016 Beuthbros</p></strong>
-		{{ Html::link('contact','Kontakt')}}
+<!--		{{ Html::link('contact','Kontakt')}}-->
         <!--<button type="button" class="btn btn-link" style="margin-left:-13px;">Kontakt</button>  -->
 		{{ Html::link('impressum','Impressum')}}
         <!--<button type="button" class="btn btn-link">Impressum</button> --> 

@@ -12,16 +12,11 @@
         <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container-fluid" style="margin-bottom: 30px;margin-top:-20px;" align="center">
-        <h2 style="margin-top:50px;">{{$users->username}} bitte warte, bis dein Partner das Spiel betritt.</h2>
+        <h2 style="margin-top:50px;">Bitte warte {{$users->username}}, bis dein Partner das Spiel betritt.</h2>
         <hr>
         <img src="images/arrow.png" class="arrow" alt="Wartegif">
         <br><br>
-        <p class="alert alert-info" id="alert" style="width: 100%;">
-            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-            <span class="sr-only">Info:</span>
-            <strong id="time">15:00</strong> <strong>Verschicke diesen Link an einen Freund!</strong>
-
-
+        
         <div class="input-group">
             <br>
             <input type="text" class="form-control input-lg txtGameCode" id="gamecode" placeholder="CODE"
@@ -155,6 +150,11 @@
             });
 
         </script>
+<p class="alert alert-info" id="alert" style="width: 100%;">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            <span class="sr-only">Info:</span>
+            <strong id="time">15:00</strong> <strong>Verschicke diesen Link an einen Freund!</strong>
+
 
 
     </div>

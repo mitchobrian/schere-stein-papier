@@ -39,15 +39,15 @@
 
          <form action="store" method="post">
 
-             <input  type="text" name="name" id="name">
+             <input  type="text" name="name"  placeholder="Gib einen Namen an" required id="name">
 
-             <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg">
+             <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg" value="Spiel erstellen!">
 
              <input type="hidden" name="_token" value="{{ csrf_token()}}">
 
          </form>
         <div>
-            <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" role="button">Ab ins Spiel!!</a>
+            <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" role="button">Ab ins Spiel!</a>
         </div>
          {{--
           <div>
@@ -68,18 +68,18 @@
         <h2 class="modal-title">Spielcode</h2>
       </div>
       <div class="modal-body">
-        <p>Bitte gebe deinen Spielcode ein</p>
+        <p>Bitte gebe deinen Spielcode ein, den du erhalten hast!</p>
        {{-- <label class="sr-only" for="Gamecode">Spielcode</label>
 
         <input type="Gamecode" class="form-control input-lg" id="Gamecode" placeholder="Spielcode" style="width: 400px;">--}}
           <form action="joinstore" method="post">
 
 
-              name<input  type="text" name="name" id="name">
-              code<input  type="text" name="code" id="code">
+              Dein Name  <input style="border:1px solid #000080" type="text" name="name" id="name" required placeholder="Gib einen Namen ein .."><br>
+              Code  <input style="border:1px solid #000080" type="text" name="code" id="code" required maxlength="10" placeholder="Der erhaltene Code"><br><br>
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-              <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg" >
+              <input  type="submit" name ="erstellen" id="submit" class="btn btn-primary btn-lg" value="Los geht's!">
           </form>
 
 
@@ -89,7 +89,7 @@
       </div>
       <div class="modal-footer">
         {{--<a class="btn btn-primary btn-lg" href="{{URL::route('gamepage')}}" style="margin-right:160px;" role="button">Verbinden</a>--}}
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
       </div>
     </div>
 
