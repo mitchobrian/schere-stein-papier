@@ -179,6 +179,18 @@ span {
     display: inline-block;
 }
 
+div#rahmen {
+    height: 50px;
+}
+
+div#beitreten {
+    float: left;
+}
+
+div#erstellen {
+    float: left;
+}
+
 
 /*button {
     position: relative;
