@@ -82,20 +82,21 @@ class GameEndController extends Controller
     public function insertnochmaldecision() {
         $match_id = $this->fetch('match_id');
 
-        
         if (Session::get('ishost')) {
             DB::table('match')
                 ->where('id', $match_id)
                 ->where('winner', '>', 0)
                 ->update(array('nochmal_a' => 1));
-            
+
         } else {
             DB::table('match')
                 ->where('id', $match_id)
                 ->where('winner', '>', 0)
                 ->update(array('nochmal_b' => 1));
-            
+
         }
+            
+
         
     }
     

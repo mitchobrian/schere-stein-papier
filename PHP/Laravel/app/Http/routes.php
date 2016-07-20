@@ -69,7 +69,6 @@ Route::get("insertnochmaldecision", "GameEndController@insertnochmaldecision");
 Route::get('{gamecode?}', 'JoinLinkController@index')
 	->where('gamecode', '(.*)');
 
-Route::get("insertnochmaldecision", "JoinLinkController@index");
 
 
 Route::get('test',
