@@ -34,11 +34,11 @@ class CreateMatchTable extends Migration
             $table->timestamps();
 
             $table->foreign('f_user_a_id')
-                ->references('id')->on('Users')
+                ->references('id')->on('users')
                 ->onDelete('cascade');
 
             $table->foreign('f_user_b_id')
-                ->references('id')->on('Users')
+                ->references('id')->on('users')
                 ->onDelete('cascade');
 
             $table->foreign('f_game_id')

@@ -88,7 +88,7 @@
                 <div>
                     <h3>Es Steht: <span id="p1Points">0</span> zu <span id="p2Points">0</span> !</h3>
 
-                        <a type="submit" name ="nochmal" id="nochmal" class="btn btn-primary btn-lg">Nochmal?</a>
+                        <button type="button" onclick="nochmal()" name ="nochmal" id="nochmal" class="btn btn-primary btn-lg">Nochmal?</button>
                     
 
                     <br><br>
@@ -102,7 +102,7 @@
             var p2Choice = '{{$p2choice}}';
             var p1Choice = '{{$choice}}';
             var match_id = '{{$match->id}}';
-            console.log(match_id);
+
             var hoster = '{{$ishost}}';
             var player1 = 'player1';
             var player2 = 'player2';

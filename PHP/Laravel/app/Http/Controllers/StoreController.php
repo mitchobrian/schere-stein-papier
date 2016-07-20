@@ -59,7 +59,7 @@ class StoreController extends Controller
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
 
-        $users = new Users;
+        $users = new users;
         $users->username = input::get("name");
         $users->gamecode = $randomString;
         $users->save();
@@ -91,7 +91,7 @@ class StoreController extends Controller
             if (!$checkgame) {
 
                 //Erstellt Datensatz User in Users Tabelle
-                $joinusers = new Users;
+                $joinusers = new users;
                 $joinusers->username = input::get("name");
                 $joinusers->gamecode = $gamecode;
                 $joinusers->save();
@@ -131,7 +131,7 @@ class StoreController extends Controller
         sleep(1);
         $gamecode = $this->fetch('gamecode');
         $host_id = $this->fetch('host_id');
-        $results = DB::table('Users')
+        $results = DB::table('users')
             ->select('gamecode', 'id')
             ->where('gamecode', $gamecode)
             ->where('id', 'not like', $host_id)
@@ -182,14 +182,14 @@ class StoreController extends Controller
                     ->join('games', 'match.f_game_id' , '=', 'games.id')
                     ->where('games.gamecode', Session::get('gamecode'))
                     ->where('match.winner', '<', 1)
-                    ->update(array('match.f_user_a_id' => Session::get('id'), 'user_a_decision' =>$selection));
+                    ->update(array('user_a_decision' =>$selection));
             }
             else {
                 DB::table('match')
                     ->join('games', 'match.f_game_id' , '=', 'games.id')
                     ->where('games.gamecode', Session::get('gamecode'))
                     ->where('match.winner', '<', 1)
-                    ->update(array('match.f_user_b_id' => Session::get('id'), 'user_b_decision' =>$selection));
+                    ->update(array('user_b_decision' =>$selection));
             }
         }
         else {

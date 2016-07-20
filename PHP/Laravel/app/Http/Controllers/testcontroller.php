@@ -14,7 +14,7 @@ class testcontroller extends Controller
 
     public function test()
     {
-        $users = new Users;
+        $users = new users;
         $users->username = "test";
         $users->save();
 
