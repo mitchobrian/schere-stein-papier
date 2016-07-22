@@ -19,7 +19,7 @@
         
         <div class="input-group">
             <br>
-            <input type="text" class="form-control input-lg txtGameCode" id="gamecode" placeholder="CODE"
+            <input type="text" class="form-control input-lg txtGameCode" id="gamecode"  readonly placeholder="CODE"
                    value="{{url('/')}}/{{$users->gamecode}}"
                    style="text-align:center;width: 100%;">
             <button class="btn btn-primary btn-lg copybtn" type="button">Kopieren</button>

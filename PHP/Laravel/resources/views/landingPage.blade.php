@@ -34,7 +34,7 @@
                 <p><b> - Spiel erstellen - </b></p>
                 <form action="store" method="post">
 
-                    <input type="text" style=" font-size:18px; border:1px solid #000080; height: 3rem" name="name" placeholder=" Gib einen Namen ein!" required id="name">
+                    <input type="text" style=" font-size:18px; border:1px solid #000080; height: 3rem" name="name" placeholder=" Gib einen Namen ein!" maxlength="12" required pattern="[a-zA-Z]+" id="name">
                     <br>
                     <br>
                     <input style="width: 11em;" type="submit" name="erstellen" id="submit" class="btn btn-primary btn-lg" value="Spiel erstellen!">

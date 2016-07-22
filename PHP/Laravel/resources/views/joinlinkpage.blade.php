@@ -41,12 +41,12 @@
                 <form action="joinstore" method="post">
 
                     <input type="hidden" name="code" id="code" value="{{$gamecode}}">
-                    <input style=" font-size:18px; border:1px solid #000080; height: 3rem" type="text" name="name" id="name" required placeholder=" Gib einen Namen ein">
+                    <input style="font-size:18px; border:1px solid #000080; height: 3rem" type="text" name="name" id="name" maxlength="12" required pattern="[a-zA-Z]+" placeholder=" Gib einen Namen ein">
                     <br>
                     <br>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                    <input style="width: 11em; " type="submit" name="erstellen" id="submit" class="btn btn-primary btn-lg" value="Spiel beitreten!">
+                    <input  mastyle="width: 11em; " type="submit" name="erstellen" id="submit" class="btn btn-primary btn-lg" value="Spiel beitreten!">
                 </form>
                 <div>
 

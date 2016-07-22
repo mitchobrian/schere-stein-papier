@@ -88,7 +88,7 @@
                 <div>
                     <h3>Es Steht: <span id="p1Points">0</span> zu <span id="p2Points">0</span> !</h3>
 
-                        <button type="button" name="nochmal" id="nochmal" class="btn btn-primary btn-lg">Nochmal?</button>
+                        <button type="button" name="nochmal" id="nochmal" class="btn btn-primary btn-lg">Noch einmal?</button>
                     
 
                     <br><br>
