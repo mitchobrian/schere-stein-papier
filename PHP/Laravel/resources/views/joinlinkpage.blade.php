@@ -33,7 +33,7 @@
             <!--          Spiel Beitreten-->
 
             <div class="container" id="beitreten" style="text-align:center;">
-                <p><b>Spiel Beitreten</b></p>
+                <p><b>- Spiel Beitreten -</b></p>
                 {{--
                 <label class="sr-only" for="Gamecode">Spielcode</label>
 
@@ -41,7 +41,7 @@
                 <form action="joinstore" method="post">
 
                     <input type="hidden" name="code" id="code" value="{{$gamecode}}">
-                    <input style="font-size:18px; border:1px solid #000080; height: 3rem" type="text" name="name" id="name" maxlength="12" required pattern="[a-zA-Z]+" placeholder=" Gib einen Namen ein">
+                    <input style="font-size:18px; border:1px solid #000080; height: 3rem" type="text" name="name" id="name" maxlength="12" required pattern="[A-Za-zäöüÄÖÜ]+" placeholder=" Gib einen Namen ein">
                     <br>
                     <br>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -70,6 +70,38 @@
 
     };
 
+(function() {
+
+  var loadScript = function(src, loadCallback) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = src;
+    s.onload = loadCallback;
+    document.body.appendChild(s);
+  };
+
+  // http://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser
+  var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+  var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+  if (isSafari || isOpera) {
+
+    loadScript('//code.jquery.com/jquery-2.1.4.min.js', function () {
+      loadScript('//cdnjs.cloudflare.com/ajax/libs/webshim/1.15.10/dev/polyfiller.js', function () {
+
+        webshims.setOptions('forms', {
+          overrideMessages: true,
+          replaceValidationUI: false
+        });
+        webshims.setOptions({
+          waitReady: true
+        });
+        webshims.polyfill();
+      });
+    });
+  }
+
+})();
 </script>
 
 
