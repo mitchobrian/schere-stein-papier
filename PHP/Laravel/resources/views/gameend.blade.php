@@ -17,12 +17,12 @@
             <div id="player-outer-div">
                 <div class="col-md-4 col-sm-5 col-xs-6 col-centered">
                     <h1 align="center" id="player1-div">{{Session::get('username')}}</h1>
-                    <h1 align="center" id="a_score"></h1>
+                    <h1 align="center" id="a_score">{{$user_a_score}}</h1>
                 </div>
                 <div class="col-md-4 col-xs-2 col-centered"></div>
                 <div class="col-md-4 col-sm-5 col-xs-6 col-centered">
                     <h1 align="center" id="player2-div">{{$enemyname}}</h1>
-                    <h1 align="center" id="b_score"></h1>
+                    <h1 align="center" id="b_score">{{$user_b_score}}</h1>
                 </div>
             </div>
         </div>

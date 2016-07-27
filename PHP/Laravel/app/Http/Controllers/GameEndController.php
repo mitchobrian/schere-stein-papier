@@ -78,12 +78,14 @@ class GameEndController extends Controller
                 ->where('id', $game_id)
                 ->increment('user_a_score');
             
-        } else if ($winner == 2) {
+        }
+        if ($winner == 2) {
             DB::table('games')
                 ->where('id', $game_id)
                 ->increment('user_b_score');
             
-        } else {
+        }
+        if ($winner == 3) {
             DB::table('games')
                 ->where('id', $game_id)
                 ->increment('user_a_score')
@@ -92,12 +94,7 @@ class GameEndController extends Controller
         }
 
 
-            DB::table('games')
-                ->where('id', $game_id)
-                ->increment('user_a_score');
-
-
-
+          
 
     }
 

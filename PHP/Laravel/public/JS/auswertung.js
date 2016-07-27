@@ -34,6 +34,8 @@ $(document).ready(function () {
                 //Show The Symbols
                 $('#Schere2_remis').show();
 
+                $('.a_score').text('GEKLAPPT');
+
                 insertmatchwinner(3);
 
                 
