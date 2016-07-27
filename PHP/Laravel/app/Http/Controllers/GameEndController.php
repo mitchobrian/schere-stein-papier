@@ -60,6 +60,69 @@ class GameEndController extends Controller
         }
 
         $ishost = session::get('ishost');
+
+
+        switch ($choice) {
+            case "Schere"://IF P1 CHOICE = SCHERE
+
+                if ($p2choice == "Schere") {
+                    $user_a_score++;
+                    $user_b_score++;
+                }
+
+                if ($p2choice == "Papier") {
+                    $user_a_score++;
+                }
+
+                if ($p2choice == "Stein") {
+                    $user_b_score++;
+                }
+                break;
+
+            case "Stein"://IF P1 CHOICE = STEIN
+
+                if ($p2choice == "Stein") {
+                    $user_a_score++;
+                    $user_b_score++;
+
+                }
+
+                if ($p2choice == "Papier") {
+                    $user_b_score++;
+
+                }
+
+                if ($p2choice == "Schere") {
+                    $user_a_score++;
+
+                }
+                break;
+
+            case "Papier": //IF P1 CHOICE = Papier
+
+                if ($p2choice == "Papier") {
+                    $user_a_score++;
+                    $user_b_score++;
+
+                }
+
+                if ($p2choice == "Schere") {
+                    $user_b_score++;
+
+                }
+
+                if ($p2choice == "Stein") {
+                    $user_a_score++;
+
+                }
+                break;
+        }
+
+
+
+
+
+
         
         return view('gameend', compact('choice', 'p2choice', 'match', 'ishost', 'enemyname', 'user_a_score', 'user_b_score'));
     }

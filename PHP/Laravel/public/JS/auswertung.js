@@ -11,6 +11,9 @@ $(document).ready(function () {
     })
 
 
+
+
+
     /* //!!!!!!!! ONLY FOR TEST !!!!!!!!!!!!!!!
      var randomChoice = Array("Schere", "Stein", "Papier");
      var p2Choice = randomChoice[Math.floor(randomChoice.length * Math.random())];
@@ -21,6 +24,9 @@ $(document).ready(function () {
 
     //Hide all Symboles
     $('.auswahl').hide();
+    
+    $('#a_score').text("TADA");
+    $('#b_score').text("GSFSF");
 
 
     switch (p1Choice) {
@@ -34,9 +40,7 @@ $(document).ready(function () {
                 //Show The Symbols
                 $('#Schere2_remis').show();
 
-                $('.a_score').text('GEKLAPPT');
-
-                insertmatchwinner(3);
+                 insertmatchwinner(3);
 
                 
 
@@ -193,7 +197,6 @@ function nochmalinsertdecision() {
             
         }
     });
-    
 
 }
 
