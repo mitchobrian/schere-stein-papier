@@ -26,28 +26,33 @@ class GameEndController extends Controller
     {
 
         $userid = input::get('id');
+        
+        $enemyname = input::get('enemyname');
 
         $match = DB::table('match')
-            ->select('match.id', 'user_a_decision', 'user_b_decision')
+            ->select('match.id', 'user_a_decision', 'user_b_decision', 'f_game_id')
             ->join('games', 'match.f_game_id' , '=', 'games.id')
             ->where('games.gamecode', Session::get('gamecode'))
             ->where('match.winner', '<', 1)
             ->first();
 
-
-
-
+        $game = DB::table('games')
+            ->select('user_a_score', 'user_b_score')
+            ->where('id', $match->f_game_id)
+            ->first();
 
         if (Session::get('ishost')) {
-
-
-
+            
+            $user_a_score = $game->user_a_score;
+            $user_b_score = $game->user_b_score;
+            
             $choice = $match->user_a_decision;
             $p2choice = $match->user_b_decision;
 
         }
         else {
-            
+            $user_a_score = $game->user_b_score;
+            $user_b_score = $game->user_a_score;
 
             $choice = $match->user_b_decision;
             $p2choice = $match->user_a_decision;
@@ -56,19 +61,40 @@ class GameEndController extends Controller
 
         $ishost = session::get('ishost');
         
-        return view('gameend', compact('choice', 'p2choice', 'match', 'ishost'));
+        return view('gameend', compact('choice', 'p2choice', 'match', 'ishost', 'enemyname', 'user_a_score', 'user_b_score'));
     }
 
     public function insertmatchwinner() {
         $match_id = $this->fetch('match_id');
         $winner = $this->fetch('winner');
-        var_dump($match_id);
-        var_dump($winner);
+        $game_id = $this->fetch('game_id');
 
-            var_dump("beim ersten");
             DB::table('match')
                 ->where('match.id','LIKE', $match_id)
                 ->update(array('winner' => $winner));
+        
+        if($winner == 1) {
+            DB::table('games')
+                ->where('id', $game_id)
+                ->increment('user_a_score');
+            
+        } else if ($winner == 2) {
+            DB::table('games')
+                ->where('id', $game_id)
+                ->increment('user_b_score');
+            
+        } else {
+            DB::table('games')
+                ->where('id', $game_id)
+                ->increment('user_a_score')
+                ->increment('user_b_score');
+            
+        }
+
+
+            DB::table('games')
+                ->where('id', $game_id)
+                ->increment('user_a_score');
 
 
 

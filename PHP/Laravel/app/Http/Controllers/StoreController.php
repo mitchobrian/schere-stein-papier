@@ -111,11 +111,18 @@ class StoreController extends Controller
 
                 $id = $joinusers->id;
 
+                $enemyname = $users->username;
                 
-                
-                
+                $playername = input::get("name");
 
-                return view("gamepage", compact('newgame', 'id'));
+                $user_b_score = 0;
+                
+                $user_a_score = 0;
+
+
+                return view('gamepage', compact('newgame', 'id', 'enemyname', 'playername', 'user_b_score', 'user_a_score'));
+
+
             }
             else {
                 return "Spiel gibt es schon";
@@ -155,7 +162,16 @@ class StoreController extends Controller
         
         $ishost = session::get('ishost');
 
-        return view('gamepage', compact('newgame', 'id'));
+       /* $enemyname = DB::table('games')
+            ->join('users', 'games.f_user_b_id' , '=', 'users.id')
+            ->select('users.username')
+            ->where('users.id', 'games.user_b_id')
+            ->first();*/
+
+
+
+
+        return view('gamepage', compact('newgame', 'id', 'enemyname', 'playername'));
     }
     
     public function insertselection() {

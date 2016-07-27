@@ -17,10 +17,12 @@
             <div id="player-outer-div">
                 <div class="col-md-4 col-sm-5 col-xs-6 col-centered">
                     <h1 align="center" id="player1-div">{{Session::get('username')}}</h1>
+                    <h1 align="center" id="a_score"></h1>
                 </div>
                 <div class="col-md-4 col-xs-2 col-centered"></div>
                 <div class="col-md-4 col-sm-5 col-xs-6 col-centered">
-                    <h1 align="center" id="player2-div">Gegner</h1>
+                    <h1 align="center" id="player2-div">{{$enemyname}}</h1>
+                    <h1 align="center" id="b_score"></h1>
                 </div>
             </div>
         </div>
@@ -86,7 +88,7 @@
 
             <div class="container" style="text-align:center;margin-top:-3%;">
                 <div>
-                    <h3>Es Steht: <span id="p1Points">0</span> zu <span id="p2Points">0</span> !</h3>
+                    <h3>Es Steht: <span id="p1Points"></span> zu <span id="p2Points"></span> !</h3>
 
                         <button type="button" name="nochmal" id="nochmal" class="btn btn-primary btn-lg" onClick="this.disabled=true;">Noch einmal?</button>
                     
@@ -102,11 +104,14 @@
             var p2Choice = '{{$p2choice}}';
             var p1Choice = '{{$choice}}';
             var match_id = '{{$match->id}}';
+            var game_id = '{{$match->f_game_id}}'
 
             var hoster = '{{$ishost}}';
-            var player1 = 'player1';
-            var player2 = 'player2';
+            var player1 = '{{Session::get('username')}}';
+            var player2 = '{{$enemyname}}';
 
+            var p1Counter = '{{$user_a_score}}';
+            var p2Counter = '{{$user_b_score}}';
 
 
         </script>

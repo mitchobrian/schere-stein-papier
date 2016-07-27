@@ -1,9 +1,5 @@
 $(document).ready(function () {
-    var p1Points = parseInt($('#p1Points').text());
-    var p2Points = parseInt($('#p2Points').text());
 
-    var p1Counter = 0;
-    var p2Counter = 0;
 
     $('#nochmal').on('click', function (e) {
 
@@ -25,9 +21,7 @@ $(document).ready(function () {
 
     //Hide all Symboles
     $('.auswahl').hide();
-    
-    console.log("ASDAS");
-    console.log(match_id + " zweite reintarg");
+
 
     switch (p1Choice) {
         case "Schere"://IF P1 CHOICE = SCHERE
@@ -40,8 +34,9 @@ $(document).ready(function () {
                 //Show The Symbols
                 $('#Schere2_remis').show();
 
-
                 insertmatchwinner(3);
+
+                
 
             }
 
@@ -54,9 +49,13 @@ $(document).ready(function () {
                 $('#Papier2_lose').show();
 
                 //Set Winnertext
-                $('#winner').text('Schere schneidet Papier! (Player1 gewinnt)');
+                $('#winner').text('Schere schneidet Papier! (' + player1 +' gewinnt)');
 
                 insertmatchwinner(1);
+
+               
+
+
             }
 
             if (p2Choice == "Stein") {
@@ -68,9 +67,11 @@ $(document).ready(function () {
                 $('#Stein2_win').show();
 
                 //Set Winnertext
-                $('#winner').text('Stein schlägt Schere (Player2 gewinnt)');
+                $('#winner').text('Stein schlägt Schere (' + player2 +' gewinnt)');
 
                 insertmatchwinner(2);
+
+                
 
 
             }
@@ -99,7 +100,7 @@ $(document).ready(function () {
                 $('#Papier2_win').show();
 
                 //Set Winnertext
-                $('#winner').text('Papier schlägt Stein! (Player2 gewinnt)');
+                $('#winner').text('Papier schlägt Stein! (' + player2 +' gewinnt)');
 
                 insertmatchwinner(2);
             }
@@ -113,7 +114,7 @@ $(document).ready(function () {
                 $('#Schere2_lose').show();
 
                 //Set Winnertext
-                $('#winner').text('Stein schlägt Schere (Player1 gewinnt)');
+                $('#winner').text('Stein schlägt Schere (' + player1 +' gewinnt)');
 
                 insertmatchwinner(1);
             }
@@ -142,7 +143,7 @@ $(document).ready(function () {
                 $('#Schere2_win').show();
 
                 //Set Winnertext
-                $('#winner').text('Schere schneidet Papier! (Player2 gewinnt)');
+                $('#winner').text('Schere schneidet Papier! (' + player2 +' gewinnt)');
 
                 insertmatchwinner(2);
             }
@@ -156,7 +157,7 @@ $(document).ready(function () {
                 $('#Stein2_lose').show();
 
                 //Set Winnertext
-                $('#winner').text('Papier schlägt Stein (Player1 gewinnt)');
+                $('#winner').text('Papier schlägt Stein (' + player1 +' gewinnt)');
 
                 insertmatchwinner(1);
             }
@@ -165,9 +166,7 @@ $(document).ready(function () {
 })
 
 function insertmatchwinner(winner) {
-    console.log("HAASDASDASDASDASDASDAS");
-    console.log(winner);
-        console.log("insertmatchwinner vom hoster")
+    if(hoster == 1) {
         $.ajax({
             'url': 'insertmatchwinner',
             'type': 'get',
@@ -175,8 +174,10 @@ function insertmatchwinner(winner) {
             'data': {
                 'winner': winner,
                 'match_id': match_id,
+                'game_id': game_id,
             }
         });
+    }
 
 }
 

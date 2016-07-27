@@ -4,11 +4,13 @@
     <div class="row-fluid">
         <div id="player-outer-div">
             <div class="col-md-4 col-sm-5 col-xs-6">
-                <h1 align="center" id="player1-div">Player 1</h1>
+                <h1 align="center" id="player1-div">{{$playername}}</h1>
+                <h1 align="center">{{$user_a_score}}</h1>
             </div>
             <div class="col-md-4 col-xs-2"></div>
             <div class="col-md-4 col-sm-5 col-xs-6">
-                <h1 align="center" id="player2-div">Player 2</h1>
+                <h1 align="center" id="player2-div">{{$enemyname}}</h1>
+                <h1 align="center">{{$user_b_score}}</h1>
             </div>
         </div>
     </div>
@@ -46,6 +48,7 @@
 </div>
 <form action="gameend" method="post" id="gameend" name="gameend">
     <input type="hidden" name="id" id="id" value="{{$id}}">
+    <input type="hidden" name="enemyname" id="enemyname" value="{{$enemyname}}">
     <input type="hidden" name="_token" value="{{ csrf_token()}}">
 </form>
 <!-- <div class="container" style="text-align:center;" >

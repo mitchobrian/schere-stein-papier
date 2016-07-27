@@ -5,7 +5,6 @@ $(document).ready(function () {
     
     //Make selection
     $('#auswahl-div img').on('click', function (e) {
-        console.log("gewählt");
         e.preventDefault();
         $('#auswahl-div img').removeClass('selected');
         $(this).addClass('selected');
@@ -19,7 +18,6 @@ $(document).ready(function () {
         if (mySelection != null) {
             $('#txtSel').val(mySelection);
         }
-console.log("vor deci methode");
         insertdecision(mySelection);
         c.getMessage(function(message){});
     
